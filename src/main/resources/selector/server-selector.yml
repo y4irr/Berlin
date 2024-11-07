@@ -1,0 +1,17 @@
+menu:
+  title: "Server Selector"
+  rows: 3
+servers:
+  Default:
+    item:
+      head: ""
+      name: "&6&lDefault Server"
+      description:
+        - "&7This is the default server."
+      material: "DIAMOND_SWORD"
+      data: 0
+      slot: 13
+      enchanted: true
+    server: "default"
+    # If you don't add "player:", the console will run the command!
+    commands: ["player:join queue default-server"]

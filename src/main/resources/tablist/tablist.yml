@@ -1,0 +1,250 @@
+tablist:
+  enabled: true
+  type: "CUSTOM" #CUSTOM or PLAYERS_DISPLAY
+  header: "&6&lComet &7(Hub)"
+  footer: "&7store.example.com"
+  lines:
+    left:
+      '1':
+        text: ""
+        head: ""
+      '2':
+        text: ""
+        head: ""
+      '3':
+        text: "&eKitmap"
+        head: ""
+      '4':
+        text: "Status <Kitmap-status>"
+        head: ""
+      '5':
+        text: "Players &e(%bungee_Kitmap%/250)"
+        head: ""
+      '6':
+        text: ""
+        head: ""
+      '7':
+        text: ""
+        head: ""
+      '8':
+        text: ""
+        head: ""
+      '9':
+        text: "&eHCF"
+        head: ""
+      '10':
+        text: "Status <HCF-status>"
+        head: ""
+      '11':
+        text: "Players &e(%bungee_HCF%/250)"
+        head: ""
+      '12':
+        text: ""
+        head: ""
+      '13':
+        text: ""
+        head: ""
+      '14':
+        text: ""
+        head: ""
+      '15':
+        text: "&ePractice"
+        head: ""
+      '16':
+        text: "Status <Practice-status>"
+        head: ""
+      '17':
+        text: "Players &e(%bungee_Practice%/250)"
+        head: ""
+      '18':
+        text: ""
+        head: ""
+      '19':
+        text: ""
+        head: ""
+      '20':
+        text: "&7&o(Server List)"
+        head: ""
+    middle:
+      '1':
+        text: ""
+        head: ""
+      '2':
+        text: ""
+        head: ""
+      '3':
+        text: "&eNickname"
+        head: "player"
+      '4':
+        text: "<player-name>'s"
+        head: ""
+      '5':
+        text: ""
+        head: ""
+      '6':
+        text: "&ePing"
+        head: ""
+      '7':
+        text: "%player_colored_ping%"
+        head: ""
+      '8':
+        text: ""
+        head: ""
+      '9':
+        text: "&eRank"
+        head: ""
+      '10':
+        text: "%phoenix_player_rank%"
+        head: ""
+      '11':
+        text: ""
+        head: ""
+      '12':
+        text: "&eQueue"
+        head: ""
+      '13':
+        text: "Server &a(%comet_queue_player_name%)"
+        head: ""
+      '14':
+        text: "Position &a(%comet_queue_player_position%/%comet_queue_player_size%)"
+        head: ""
+      '15':
+        text: ""
+        head: ""
+      '16':
+        text: "&eGlobal Players"
+        head: ""
+      '17':
+        text: "Total &a(%bungee_Practice%/250)"
+        head: ""
+      '18':
+        text: ""
+        head: ""
+      '19':
+        text: ""
+        head: ""
+      '20':
+        text: "&7&o(General Info)"
+        head: ""
+    right:
+      '1':
+        text: ""
+        head: ""
+      '2':
+        text: ""
+        head: ""
+      '3':
+        text: ""
+        head: ""
+      '4':
+        text: "&eDiscord"
+        head: "discord"
+      '5':
+        text: "discord.comet.hub"
+        head: ""
+      '6':
+        text: ""
+        head: ""
+      '7':
+        text: "&eFacebook"
+        head: "facebook"
+      '8':
+        text: "facebook.com/@CometHub"
+        head: ""
+      '9':
+        text: ""
+        head: ""
+      '10':
+        text: "&eWebsite"
+        head: "website"
+      '11':
+        text: "www.comet.hub"
+        head: ""
+      '12':
+        text: ""
+        head: ""
+      '13':
+        text: "&eStore"
+        head: "store"
+      '14':
+        text: "store.comet.hub"
+        head: ""
+      '15':
+        text: ""
+        head: ""
+      '16':
+        text: "&eYoutube"
+        head: "youtube"
+      '17':
+        text: "youtube.com/@CometHub"
+        head: ""
+      '18':
+        text: ""
+        head: ""
+      '19':
+        text: ""
+        head: ""
+      '20':
+        text: "&7&o(Social Info)"
+        head: ""
+    far_right:
+      '1':
+        text: ""
+        head: ""
+      '2':
+        text: ""
+        head: ""
+      '3':
+        text: ""
+        head: ""
+      '4':
+        text: ""
+        head: ""
+      '5':
+        text: "&eWhat's up?"
+        head: ""
+      '6':
+        text: "If you need support you can get it"
+        head: ""
+      '7':
+        text: "by using the command &a(/support) and"
+        head: ""
+      '8':
+        text: "a member of the staff will get back"
+        head: ""
+      '9':
+        text: "to you right away."
+        head: ""
+      '10':
+        text: ""
+        head: ""
+      '11':
+        text: ""
+        head: ""
+      '12':
+        text: ""
+        head: ""
+      '13':
+        text: ""
+        head: ""
+      '14':
+        text: "&aThank you for trusting us"
+        head: ""
+      '15':
+        text: "&aenjoy your purchase!"
+        head: ""
+      '16':
+        text: ""
+        head: ""
+      '17':
+        text: ""
+        head: ""
+      '18':
+        text: ""
+        head: ""
+      '19':
+        text: ""
+        head: ""
+      '20':
+        text: "&7&o(Extra Info)"
+        head: ""

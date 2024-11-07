@@ -1,0 +1,36 @@
+# HCFCore Type
+# "VAPOR", "LAZARUS" or "AZURITE"
+# This option is only for the HCFCore plugin.
+hcfcore-type: ""
+
+# Use "FILE" or "MONGO"
+save_method: "FILE"
+
+double-jump:
+  enabled: true
+  effect: "EXPLOSION_HUGE"
+  sound: "BAT_TAKEOFF"
+  velocity: 1.5
+
+lunar-client:
+  enabled: false
+  nametag:
+    - "&7Ping: &f%player_ping%ms"
+    - "%player_name%"
+
+action-bar:
+  enabled: true
+  interval: 5
+  messages:
+    - "&6&lTEST"
+    - "&6&lTEST 2"
+    - "&6&lTEST 3"
+    - "&6&lTEST 4"
+    - "&6&lTEST 5"
+
+parkour:
+  start-location: ""
+  end-location: ""
+  checkpoints: {}
+
+spawn-location: ""
