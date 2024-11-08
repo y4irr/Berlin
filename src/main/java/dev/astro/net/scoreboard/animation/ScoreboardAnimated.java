@@ -16,34 +16,32 @@ public class ScoreboardAnimated {
         List<String> titles = CometPlugin.get().getScoreboardFile().getStringList("title-animation.lines");
         List<String> footers = CometPlugin.get().getScoreboardFile().getStringList("footer-animation.lines");
 
-        title = titles.get(0);
-        footer = footers.get(0);
+        title = titles.isEmpty() ? "" : titles.get(0);
+        footer = footers.isEmpty() ? "" : footers.get(0);
 
         if (CometPlugin.get().getScoreboardFile().getBoolean("title-animation.enabled")) {
-            AtomicInteger atomicInteger = new AtomicInteger();
-
-            Bukkit.getServer().getScheduler().runTaskTimerAsynchronously(CometPlugin.getPlugin(), () -> {
-                if (atomicInteger.get() == titles.size()) atomicInteger.set(0);
-
-                title = titles.get(atomicInteger.getAndIncrement());
-
-            }, 0L, (long) (CometPlugin.get().getScoreboardFile().getDouble("title-animation.interval") * 20L));
+            startAnimation(titles, "title-animation.interval", newTitle -> title = newTitle);
         }
 
         if (CometPlugin.get().getScoreboardFile().getBoolean("footer-animation.enabled")) {
-            AtomicInteger atomicInteger = new AtomicInteger();
-
-            Bukkit.getServer().getScheduler().runTaskTimerAsynchronously(CometPlugin.getPlugin(), () -> {
-                if (atomicInteger.get() == footers.size()) atomicInteger.set(0);
-
-                footer = footers.get(atomicInteger.getAndIncrement());
-
-            }, 0L, (long) (CometPlugin.get().getScoreboardFile().getDouble("footer-animation.interval") * 20L));
+            startAnimation(footers, "footer-animation.interval", newFooter -> footer = newFooter);
         }
     }
 
+    private static void startAnimation(List<String> lines, String configPath, java.util.function.Consumer<String> updater) {
+        if (lines.isEmpty()) return;
+
+        AtomicInteger index = new AtomicInteger();
+        long intervalTicks = (long) (CometPlugin.get().getScoreboardFile().getDouble(configPath) * 20L);
+
+        Bukkit.getServer().getScheduler().runTaskTimerAsynchronously(CometPlugin.getPlugin(), () -> {
+            if (index.get() >= lines.size()) index.set(0);
+            updater.accept(lines.get(index.getAndIncrement()));
+        }, 0L, intervalTicks);
+    }
+
     public static void disable() {
-        footer = null;
         title = null;
+        footer = null;
     }
 }
