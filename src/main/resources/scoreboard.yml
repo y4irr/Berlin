@@ -3,38 +3,56 @@ title-animation:
   interval: 0.3
   lines:
 
-    - "&6&l✯ &f&lH&6&lUB &6&l✯"
-    - "&6&l✯ &6&lH&f&lU&6&lB &6&l✯"
-    - "&6&l✯ &6&lHU&f&lB &6&l✯"
-    - "&6&l✯ &f&lHUB &6&l✯"
-    - "&6&l✯ &6&lHUB &6&l✯"
-    - "&6&l✯ &f&lHUB &6&l✯"
-    - "&6&l✯ &6&lHUB &6&l✯"
+    - "&b❄ &2&lHub-01 &b❄"
+    - "&b❄ &4&lH&2&lub-01 &b❄"
+    - "&b❄ &c&lH&4&lu&2&lb-01 &b❄"
+    - "&b❄ &c&lHu&4&lb&2&l-01 &b❄"
+    - "&b❄ &c&lHub&4&l-&2&l01 &b❄"
+    - "&b❄ &4&lH&c&lub-&4&l0&2&l1 &b❄"
+    - "&b❄ &2&lH&4&lu&c&lb-0&4&l1 &b❄"
+    - "&b❄ &2&lHu&4&lb&c&l-01 &b❄"
+    - "&b❄ &2&lHub&4&l-&c&l01 &b❄"
+    - "&b❄ &2&lHub-&4&l0&c&l1 &b❄"
+    - "&b❄ &2&lHub-0&4&l1 &b❄"
+    - "&b❄ &2&lHub-01 &b❄"
+    - "&b❄ &2&lHub-01 &b❄"
+    - "&b❄ &4&lHub-01 &b❄"
+    - "&b❄ &4&lHub-01 &b❄"
+    - "&b❄ &2&lHub-01 &b❄"
+    - "&b❄ &2&lHub-01 &b❄"
+    - "&b❄ &4&lHub-01 &b❄"
+    - "&b❄ &4&lHub-01 &b❄"
+    - "&b❄ &2&lHub-01 &b❄"
+    - "&b❄ &2&lHub-01 &b❄"
+    - "&b❄ &4&lHub-01 &b❄"
+    - "&b❄ &4&lHub-01 &b❄"
+    - "&b❄ &2&lHub-01 &b❄"
+    - "&b❄ &2&lHub-01 &b❄"
 
 footer-animation:
   enabled: true
-  interval: 1.5
+  interval: 5.0
   lines:
 
-    - "&7comet.hub"
-    - "&7ts.comet.hub"
-    - "&7store.comet.hub"
-    - "&7www.comet.hub"
+    - "&7cyruspvp.net"
+    - "&bts.cyruspvp.net"
+    - "&9discord.cyruspvp.net"
+    - "&astore.cyruspvp.net"
 scoreboard:
   enabled: true
   lines:
-    - "&7&m----------------------"
-    - "&6Online:"
-    - "&f%bungee_total%"
+    - "&7&m-------------------"
+    - "&2Rank&7:"
+    - "%luckperms_groups%"
     - ""
-    - "&6Rank:"
-    - "&f%luckperms_suffix%"
+    - "&2Online&7:"
+    - "&f%bungee_total%&7/&f2025"
     - ""
-    - "<queue>"
     - "<timers>"
     - "<footer>"
-    - "&7&m----------------------"
+    - "&7&m-------------------"
   addons:
     queue: []
     timers:
-      - "<timer-name>&7: &f<timer-time>"
+      - "<timer-name>&7: &c<timer-time>"
+      - ""

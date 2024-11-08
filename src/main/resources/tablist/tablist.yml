@@ -1,24 +1,24 @@
 tablist:
   enabled: true
   type: "CUSTOM" #CUSTOM or PLAYERS_DISPLAY
-  header: "&6&lComet &7(Hub)"
-  footer: "&7store.example.com"
+  header: "&7\n&b❄ &2&lCyrusPvP &b❄ \n&7(Hub)\n"
+  footer: "&7&ocyruspvp.net"
   lines:
     left:
       '1':
         text: ""
         head: ""
       '2':
-        text: ""
-        head: ""
+        text: "&2Queue"
+        head: "queue"
       '3':
-        text: "&eKitmap"
+        text: "&fServer&7: &c%Berlin_queue_player_name%"
         head: ""
       '4':
-        text: "Status <Kitmap-status>"
+        text: "&fPosition&7: &2#%Berlin_queue_player_position%&7/&2#%Berlin_queue_player_size%"
         head: ""
       '5':
-        text: "Players &e(%bungee_Kitmap%/250)"
+        text: ""
         head: ""
       '6':
         text: ""
@@ -30,162 +30,162 @@ tablist:
         text: ""
         head: ""
       '9':
-        text: "&eHCF"
+        text: ""
         head: ""
       '10':
-        text: "Status <HCF-status>"
+        text: ""
         head: ""
       '11':
-        text: "Players &e(%bungee_HCF%/250)"
+        text: ""
         head: ""
       '12':
-        text: ""
-        head: ""
+        text: "&2Big"
+        head: "potion"
       '13':
-        text: ""
+        text: "&fStatus&7: %pinger_isonline_localhost:25577%"
         head: ""
       '14':
-        text: ""
+        text: "&fOnline&7: &2%bungee_big%&7/&2250"
         head: ""
       '15':
-        text: "&ePractice"
+        text: ""
         head: ""
       '16':
-        text: "Status <Practice-status>"
+        text: ""
         head: ""
       '17':
-        text: "Players &e(%bungee_Practice%/250)"
+        text: ""
         head: ""
       '18':
-        text: ""
-        head: ""
+        text: "&2Store"
+        head: "store"
       '19':
-        text: ""
+        text: "&fstore.cyruspvp.net"
         head: ""
       '20':
-        text: "&7&o(Server List)"
+        text: ""
         head: ""
     middle:
       '1':
         text: ""
         head: ""
       '2':
-        text: ""
-        head: ""
+        text: "&2&lCyrusPvP Network"
+        head: "heart"
       '3':
-        text: "&eNickname"
-        head: "player"
+        text: "&fOnline&7: &2%bungee_all%&7/&22500"
+        head: ""
       '4':
-        text: "<player-name>'s"
+        text: ""
         head: ""
       '5':
-        text: ""
-        head: ""
+        text: "&2Gamemodes"
+        head: "stats"
       '6':
-        text: "&ePing"
+        text: ""
         head: ""
       '7':
-        text: "%player_colored_ping%"
-        head: ""
-      '8':
         text: ""
         head: ""
+      '8':
+        text: "&2Mini"
+        head: "planet"
       '9':
-        text: "&eRank"
+        text: "&fStatus&7: %pinger_isonline_localhost:25578%"
         head: ""
       '10':
-        text: "%phoenix_player_rank%"
+        text: "&fOnline&7: &2%bungee_mini%&7/&2250"
         head: ""
       '11':
         text: ""
         head: ""
       '12':
-        text: "&eQueue"
-        head: ""
+        text: "&2Kits"
+        head: "bow"
       '13':
-        text: "Server &a(%comet_queue_player_name%)"
+        text: "&fStatus&7: %pinger_isonline_localhost:25588%"
         head: ""
       '14':
-        text: "Position &a(%comet_queue_player_position%/%comet_queue_player_size%)"
+        text: "&fOnline&7: &2%bungee_kits%&7/&2250"
         head: ""
       '15':
         text: ""
         head: ""
       '16':
-        text: "&eGlobal Players"
+        text: ""
         head: ""
       '17':
-        text: "Total &a(%bungee_Practice%/250)"
+        text: ""
         head: ""
       '18':
-        text: ""
-        head: ""
+        text: "&2Discord"
+        head: "discord"
       '19':
-        text: ""
+        text: "&fdiscord.cyruspvp.net"
         head: ""
       '20':
-        text: "&7&o(General Info)"
+        text: ""
         head: ""
     right:
       '1':
         text: ""
         head: ""
       '2':
-        text: ""
-        head: ""
+        text: "&2Profile"
+        head: "%player%"
       '3':
-        text: ""
+        text: "&fName&7: &2%player_name%"
         head: ""
       '4':
-        text: "&eDiscord"
-        head: "discord"
+        text: "&fRank&7: %luckperms_groups%"
+        head: ""
       '5':
-        text: "discord.comet.hub"
+        text: ""
         head: ""
       '6':
         text: ""
         head: ""
       '7':
-        text: "&eFacebook"
-        head: "facebook"
+        text: ""
+        head: ""
       '8':
-        text: "facebook.com/@CometHub"
+        text: ""
         head: ""
       '9':
         text: ""
         head: ""
       '10':
-        text: "&eWebsite"
-        head: "website"
-      '11':
-        text: "www.comet.hub"
-        head: ""
-      '12':
         text: ""
         head: ""
+      '11':
+        text: ""
+        head: ""
+      '12':
+        text: "&2Old HCF"
+        head: "king"
       '13':
-        text: "&eStore"
-        head: "store"
+        text: "&fStatus&7: %pinger_isonline_localhost:6969%"
+        head: ""
       '14':
-        text: "store.comet.hub"
+        text: "&fOnline&7: &2%bungee_oldhcf%&7/&2250"
         head: ""
       '15':
         text: ""
         head: ""
       '16':
-        text: "&eYoutube"
-        head: "youtube"
+        text: ""
+        head: ""
       '17':
-        text: "youtube.com/@CometHub"
+        text: ""
         head: ""
       '18':
-        text: ""
-        head: ""
+        text: "&2TeamSpeak"
+        head: "teamspeak"
       '19':
-        text: ""
+        text: "&fts.cyruspvp.net"
         head: ""
       '20':
-        text: "&7&o(Social Info)"
+        text: ""
         head: ""
     far_right:
       '1':
@@ -201,19 +201,19 @@ tablist:
         text: ""
         head: ""
       '5':
-        text: "&eWhat's up?"
+        text: ""
         head: ""
       '6':
-        text: "If you need support you can get it"
+        text: ""
         head: ""
       '7':
-        text: "by using the command &a(/support) and"
+        text: ""
         head: ""
       '8':
-        text: "a member of the staff will get back"
+        text: ""
         head: ""
       '9':
-        text: "to you right away."
+        text: ""
         head: ""
       '10':
         text: ""
@@ -228,10 +228,10 @@ tablist:
         text: ""
         head: ""
       '14':
-        text: "&aThank you for trusting us"
+        text: ""
         head: ""
       '15':
-        text: "&aenjoy your purchase!"
+        text: ""
         head: ""
       '16':
         text: ""
@@ -246,5 +246,5 @@ tablist:
         text: ""
         head: ""
       '20':
-        text: "&7&o(Extra Info)"
+        text: ""
         head: ""

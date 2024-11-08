@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>dev.astro.net</groupId>
-    <artifactId>Comet</artifactId>
-    <version>1.7-SNAPSHOT</version>
-    <name>Comet</name>
+    <groupId>dev.comunidad.net</groupId>
+    <artifactId>Berlin</artifactId>
+    <version>1.1</version>
+    <name>Berlin</name>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -56,6 +56,10 @@
             <url>https://repo.codemc.org/repository/maven-public/</url>
             <layout>default</layout>
         </repository>
+        <repository>
+            <id>lunarclient</id>
+            <url>https://repo.lunarclient.dev</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -74,6 +78,20 @@
                     <artifactId>annotations</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lunarclient</groupId>
+            <artifactId>apollo-api</artifactId>
+            <version>1.1.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- For Adventure support add the following dependency. -->
+        <dependency>
+            <groupId>com.lunarclient</groupId>
+            <artifactId>apollo-extra-adventure4</artifactId>
+            <version>1.1.6</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -98,7 +116,7 @@
             <systemPath>${basedir}/libs/spigot-1.20.4.jar</systemPath>
         </dependency>
 
-       <dependency>
+        <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigotapi2</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
@@ -130,7 +148,7 @@
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
-            <version>2.11.3</version>
+            <version>2.11.5</version>
             <scope>provided</scope>
         </dependency>
 
@@ -138,13 +156,6 @@
             <groupId>com.mojang</groupId>
             <artifactId>authlib</artifactId>
             <version>3.11.50</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.LunarClient</groupId>
-            <artifactId>BukkitAPI</artifactId>
-            <version>v1.0.1</version>
             <scope>provided</scope>
         </dependency>
 
@@ -275,23 +286,19 @@
                     <relocations>
                         <relocation>
                             <pattern>de.tr7zw.changeme.nbtapi</pattern>
-                            <shadedPattern>dev.astro.net.libs.nbtapi</shadedPattern>
+                            <shadedPattern>dev.comunidad.net.libs.nbtapi</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>com.cryptomorin.xseries</pattern>
-                            <shadedPattern>dev.astro.net.libs.xseries</shadedPattern>
+                            <shadedPattern>dev.comunidad.net.libs.xseries</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>fr.mrmicky.fastparticles</pattern>
-                            <shadedPattern>dev.astro.net.libs.fastparticles</shadedPattern>
+                            <shadedPattern>dev.comunidad.net.libs.fastparticles</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>com.github.retrooper</pattern>
                             <shadedPattern>xyz.refinedev.lib.com.github.retrooper</shadedPattern>
-                        </relocation>
-                        <relocation>
-                            <pattern>net.kyori</pattern>
-                            <shadedPattern>xyz.refinedev.lib.com.github.retrooper.libs.net.kyori</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>

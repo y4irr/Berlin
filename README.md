@@ -1,6 +1,6 @@
-# Comet
+# Berlin
 
-Comet HubCore
+Berlin HubCore (Really Cool)
 
 Features:
 - HexColor Support
@@ -16,10 +16,8 @@ Features:
 - ActionBar system
 - Essential Commands
 - Gadgets
+- Profiles
 - Particles
-- Banners
-- Balloons
-- Custom Outfit
 - Show & Hide player
 - Server Selector (Custom Heads)
 - Sub Server Selector (Custom Heads)

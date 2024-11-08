@@ -1,17 +1,267 @@
 menu:
-  title: "Server Selector"
-  rows: 3
+  title: "&2Select Modalities"
+  rows: 5
 servers:
-  Default:
+  Big:
     item:
       head: ""
-      name: "&6&lDefault Server"
+      name: "&2▪ &lBig &2▪"
       description:
-        - "&7This is the default server."
+        - "&8Competitive"
+        - ""
+        - "&2&lMap Information"
+        - "&2┃ &fMap Kit&7: &4S1 & P1"
+        - "&4┃ &fFactions&7: &420 Members"
+        - "&2┃ &fAllies&7: &cDisable"
+        - ""
+        - "&2&lMap Prizes"
+        - "&4┃ &fFaction Top&7: &2&l$&a&l30 &b&lPay&9&lpal"
+        - "&2┃ &fUsers&7: &4%bungee_big%&7/&4250"
+        - ""
+        - "&aClick to join queue."
       material: "DIAMOND_SWORD"
       data: 0
-      slot: 13
+      slot: 21
       enchanted: true
     server: "default"
+    commands: ["player:joinqueue big"]
+  Kits:
+    item:
+      head: ""
+      name: "&2▪ &lKits &2▪"
+      description:
+        - "&8Competitive"
+        - ""
+        - "&2&lMap Information"
+        - "&2┃ &fMap Kit&7: &4S1 & P1"
+        - "&4┃ &fFactions&7: &410 Members"
+        - "&2┃ &fAllies&7: &cDisable"
+        - ""
+        - "&2&lMap Prizes"
+        - "&4┃ &fFaction Top&7: &2&l$&a&l20 &b&lPay&9&lpal"
+        - "&2┃ &fUsers&7: &4%bungee_big%&7/&4250"
+        - ""
+        - "&aClick to join queue."
+      material: "BOW"
+      data: 0
+      slot: 24
+      enchanted: true
+    server: "default"
+    commands: ["player:joinqueue kits"]
+  Mini:
+    item:
+      head: ""
+      name: "&2▪ &lMini &2▪"
+      description:
+        - "&8Competitive"
+        - ""
+        - "&2&lMap Information"
+        - "&2┃ &fMap Kit&7: &4S1 & P1"
+        - "&4┃ &fFactions&7: &43 Members"
+        - "&2┃ &fAllies&7: &cDisable"
+        - ""
+        - "&2&lMap Prizes"
+        - "&4┃ &fFaction Top&7: &2&l$&a&l10 &b&lPay&9&lpal"
+        - "&2┃ &fUsers&7: &4%bungee_big%&7/&4250"
+        - ""
+        - "&aClick to join queue."
+      material: "BLAZE_POWDER"
+      data: 0
+      slot: 23
+      enchanted: true
+    server: "default"
+    commands: ["player:joinqueue mini"]
+  OldHCF:
+    item:
+      head: ""
+      name: "&2▪ &lOldHCF &2▪"
+      description:
+        - "&8Competitive"
+        - ""
+        - "&2&lMap Information"
+        - "&2┃ &fMap Kit&7: &4S1 & P1"
+        - "&4┃ &fFactions&7: &45 Members"
+        - "&2┃ &fAllies&7: &cDisable"
+        - ""
+        - "&2&lMap Prizes"
+        - "&4┃ &fFaction Top&7: &2&l$&a&l15 &b&lPay&9&lpal"
+        - "&2┃ &fUsers&7: &4%bungee_big%&7/&4250"
+        - ""
+        - "&aClick to join queue."
+      material: "POTION"
+      data: 0
+      slot: 20
+      enchanted: true
+    server: "default"
+    commands: ["player:joinqueue oldhcf"]
+  Christmas:
+    item:
+      head: "_AX_"
+      name: "&2&lM&4&le&2&lr&4&lr&2&ly &4&lC&2&lh&4&lr&2&li&4&ls&2&lt&4&lm&2&la&4&ls"
+      description:
+        - ""
+        - "&7This is a gratitued to you players!"
+        - "&7To those person that play daily this server"
+        - "&7We appreciate every single one of you"
+        - ""
+        - "&7Use &2/freetag&7 to get a free tag!"
+        - "&7Take this as our gift to you &4&l❤"
+      material: "SKULL"
+      data: 3
+      slot: 40
+      enchanted: true
+    server: ""
+    commands: [""]
+
+  #############################################################################
+  #                                                                           #
+  #                    Glass_Pane Decoration                                  #
+  #                                                                           #
+  #############################################################################
+  glass1:
+    item:
+      head: ""
+      name: "&7"
+      description:
+        - ""
+      material: "STAINED_GLASS_PANE"
+      data: 14
+      slot: 0
+      enchanted: false
+    server: ""
+    commands: [""]
+  glass2:
+    item:
+      head: ""
+      name: "&7"
+      description:
+        - ""
+      material: "STAINED_GLASS_PANE"
+      data: 14
+      slot: 8
+      enchanted: false
+    server: ""
+    commands: [""]
+  glass3:
+    item:
+      head: ""
+      name: "&7"
+      description:
+        - ""
+      material: "STAINED_GLASS_PANE"
+      data: 14
+      slot: 36
+      enchanted: false
+    server: ""
+    commands: [""]
+  glass4:
+    item:
+      head: ""
+      name: "&7"
+      description:
+        - ""
+      material: "STAINED_GLASS_PANE"
+      data: 14
+      slot: 44
+      enchanted: false
+    server: ""
+    commands: [""]
+  glass5:
+    item:
+      head: ""
+      name: "&7"
+      description:
+        - ""
+      material: "STAINED_GLASS_PANE"
+      data: 13
+      slot: 1
+      enchanted: false
+    server: ""
+    commands: [""]
+  glass6:
+    item:
+      head: ""
+      name: "&7"
+      description:
+        - ""
+      material: "STAINED_GLASS_PANE"
+      data: 13
+      slot: 7
+      enchanted: false
+    server: ""
+    commands: [""]
+  glass7:
+    item:
+      head: ""
+      name: "&7"
+      description:
+        - ""
+      material: "STAINED_GLASS_PANE"
+      data: 13
+      slot: 9
+      enchanted: false
+    server: ""
+    commands: [""]
+  glass8:
+    item:
+      head: ""
+      name: "&7"
+      description:
+        - ""
+      material: "STAINED_GLASS_PANE"
+      data: 13
+      slot: 17
+      enchanted: false
+    server: ""
+    commands: [""]
+  glass12:
+    item:
+      head: ""
+      name: "&7"
+      description:
+        - ""
+      material: "STAINED_GLASS_PANE"
+      data: 13
+      slot: 43
+      enchanted: false
+    server: ""
+    commands: [""]
+  glass11:
+    item:
+      head: ""
+      name: "&7"
+      description:
+        - ""
+      material: "STAINED_GLASS_PANE"
+      data: 13
+      slot: 35
+      enchanted: false
+    server: ""
     # If you don't add "player:", the console will run the command!
-    commands: ["player:join queue default-server"]
+    commands: [""]
+  glass10:
+    item:
+      head: ""
+      name: "&7"
+      description:
+        - ""
+      material: "STAINED_GLASS_PANE"
+      data: 13
+      slot: 37
+      enchanted: false
+    server: ""
+    # If you don't add "player:", the console will run the command!
+    commands: [""]
+  glass9:
+    item:
+      head: ""
+      name: "&7"
+      description:
+        - ""
+      material: "STAINED_GLASS_PANE"
+      data: 13
+      slot: 27
+      enchanted: false
+    server: ""
+    # If you don't add "player:", the console will run the command!
+    commands: [""]
