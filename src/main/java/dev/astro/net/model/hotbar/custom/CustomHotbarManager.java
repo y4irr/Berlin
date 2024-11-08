@@ -25,16 +25,14 @@ import java.util.Set;
 public class CustomHotbarManager {
 
     private final Comet plugin;
-    private final Map<String, CustomHotbar> hotbarMap;
+    private final Map<String, CustomHotbar> hotbarMap = new HashMap<>();
     private final Map<ItemStack, CustomHotbar> hotbarCache = new HashMap<>();
+    private final Set<String> invalidHotbars = new HashSet<>();
 
     public CustomHotbarManager(Comet plugin) {
         this.plugin = plugin;
-        this.hotbarMap = new HashMap<>();
-        this.hotbarNames = new HashSet<>();
-        this.loadOrRefresh(false);
+        loadOrRefresh(false);
     }
-    private final Set<String> hotbarNames;
 
     public Collection<CustomHotbar> getHotbars() {
         return hotbarMap.values();
@@ -49,24 +47,20 @@ public class CustomHotbarManager {
     }
 
     public CustomHotbar getHotbar(ItemStack item) {
-        if (hotbarCache.containsKey(item))
-            return hotbarCache.get(item);
-
-        for (CustomHotbar hotbar : getHotbars()) {
-            if (hotbar.isSimilar(item))
-                return hotbarCache.computeIfAbsent(item, k -> hotbar);
-        }
-        return null;
+        return hotbarCache.computeIfAbsent(item, key -> getHotbars().stream()
+                .filter(hotbar -> hotbar.isSimilar(item))
+                .findFirst()
+                .orElse(null));
     }
 
     public void giveHotbar(Player player) {
-        for (CustomHotbar hotbar : getHotbars()) {
-            if (hotbar.isEnabled()) player.getInventory().setItem(hotbar.getItemSlot(), hotbar.getItem(player));
-        }
+        getHotbars().stream()
+                .filter(CustomHotbar::isEnabled)
+                .forEach(hotbar -> player.getInventory().setItem(hotbar.getItemSlot(), hotbar.getItem(player)));
     }
 
     public void loadOrCreate(String name, ConfigurationSection section) {
-        CustomHotbar hotbar = exists(name) ? getHotbar(name) : new CustomHotbar();
+        CustomHotbar hotbar = hotbarMap.computeIfAbsent(name, k -> new CustomHotbar());
         hotbar.setName(name);
         hotbar.setEnabled(section.getBoolean(name + ".enabled"));
         hotbar.setItem(new ItemBuilder(section.getString(name + ".item.material"))
@@ -76,32 +70,24 @@ public class CustomHotbarManager {
                 .setSkullOwner(section.getString(name + ".item.head"))
                 .setEnchanted(section.getBoolean(name + ".item.enchanted"))
                 .build());
-        hotbar.setItemSlot(section.getInt(name+ ".item.slot"));
-        hotbar.setSkullOwner(section.getString(name + ".item.head"));
+        hotbar.setItemSlot(section.getInt(name + ".item.slot"));
         hotbar.setCommands(section.getStringList(name + ".commands"));
-
-        if (!exists(name)) hotbarMap.put(name, hotbar);
     }
 
     public void loadOrRefresh(boolean reload) {
         FileConfig hotbarFile = plugin.getHotbarFile();
         ConfigurationSection section = hotbarFile.getConfiguration().getConfigurationSection("custom");
 
-        for (String hotbarName : section.getKeys(false)) {
-            loadOrCreate(hotbarName, section);
+        section.getKeys(false).forEach(hotbarName -> loadOrCreate(hotbarName, section));
+
+        hotbarMap.keySet().removeIf(hotbarName -> !section.contains(hotbarName));
+
+        if (reload) {
+            Bukkit.getOnlinePlayers().forEach(player -> {
+                if (!plugin.getParkourManager().isParkourPlayer(player)) {
+                    giveHotbar(player);
+                }
+            });
         }
-
-        for (CustomHotbar hotbar : hotbarMap.values()) {
-            String hotbarName = hotbar.getName();
-            if (!section.contains(hotbarName)) hotbarNames.add(hotbarName);
-        }
-
-        hotbarNames.forEach(hotbarMap::remove);
-        hotbarNames.clear();
-
-        if (reload) Bukkit.getOnlinePlayers().forEach(player -> {
-            if (plugin.getParkourManager().isParkourPlayer(player)) return;
-            giveHotbar(player);
-        });
     }
 }
