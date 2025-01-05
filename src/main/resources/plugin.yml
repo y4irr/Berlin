@@ -1,6 +1,6 @@
-main: dev.astro.net.CometPlugin
+main: dev.comunidad.net.BerlinPlugin
 name: ${project.name}
 version: ${project.version}
-author: "Astro Operations"
+author: "Comunidad"
 api-version: 1.13
 depend: ["PlaceholderAPI", "ProtocolLib"]

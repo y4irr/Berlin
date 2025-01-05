@@ -3,100 +3,78 @@ normal:
     enabled: true
     item:
       head: ""
-      name: "&6&lSERVER SELECTOR &8┃ &7(Right Click)"
-      description: [ ]
-      material: "COMPASS"
-      data: 0
-      slot: 4
-      enchanted: true
-    commands: []
-  hub-selector:
-    enabled: true
-    item:
-      head: ""
-      name: "&6&lHUB SELECTOR &8┃ &7(Right Click)"
+      name: "&b❄ &2Server Selector &7(Right Click) &b❄"
       description: [ ]
       material: "WATCH"
       data: 0
-      slot: 7
+      slot: 0
       enchanted: true
-    commands: [ ]
+    commands: []
   ender-butt:
     enabled: true
-    mount: true
+    mount: false
     item:
       head: ""
-      name: "&6&lENDER BUTT &8┃ &7(Right Click)"
+      name: "&b❄ &2SnowButt &7(Right Click) &b❄"
       description: []
-      material: "ENDER_PEARL"
+      material: "SNOW_BALL"
       data: 0
-      slot: 8
+      slot: 4
       enchanted: true
   hide-players:
     enabled: true
     item:
       head: ""
-      name: "&6&lHIDE PLAYERS &8┃ &7(Right Click)"
+      name: "&b❄ &cHide Players &7(Right Click) &b❄"
       description: []
       material: "INK_SACK"
       data: 10
-      slot: 7
+      slot: 8
       enchanted: true
     commands: []
   show-players:
     enabled: true
     item:
       head: ""
-      name: "&6&lSHOW PLAYERS &8┃ &7(Right Click)"
+      name: "&b❄ &aShow Players &7(Right Click) &b❄"
       description: []
       material: "INK_SACK"
       data: 8
-      slot: 7
+      slot: 8
       enchanted: true
     commands: []
-  cosmetics:
+  information:
     enabled: true
     item:
       head: ""
-      name: "&6&lCOSMETICS &8┃ &7(Right Click)"
+      name: "&2Information &7(Right Click)"
       description: []
-      material: "ENDER_CHEST"
+      material: "BOOK"
       data: 0
-      slot: 0
+      slot: 5
       enchanted: true
-    commands: []
-  parkour:
+  profile:
     enabled: true
     item:
-      head: ""
-      name: "&6&lPARKOUR &8┃ &7(Right Click)"
+      head: "%player%"
+      name: "&2Profile &7(Right Click)"
       description: []
-      material: "FEATHER"
-      data: 0
-      slot: 1
-      enchanted: true
-    commands: []
-  pvpmode:
-    enabled: true
-    item:
-      head: ""
-      name: "&6&lPVPMODE &8┃ &7(Right Click)"
-      description: []
-      material: "DIAMOND_SWORD"
-      data: 0
+      material: "SKULL"
+      data: 3
       slot: 2
       enchanted: true
-    commands: []
 
 custom:
   example:
-    enabled: false
+    enabled: true
     item:
       head: ""
-      name: "&6&lEXAMPLE &8┃ &7(Right Click)"
-      description: []
-      material: "CHEST"
+      name: "&dShop &7(Right Click)"
+      description:
+        - "&7This is a testing custom hotbar item."
+      material: "EMERALD"
       data: 0
-      slot: 4
+      slot: 1
       enchanted: true
-    commands: []
+    commands:
+      - "me This is a testing custom hotbar item."
