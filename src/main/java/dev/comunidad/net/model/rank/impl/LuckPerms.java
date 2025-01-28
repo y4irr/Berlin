@@ -31,6 +31,17 @@ public class LuckPerms implements IRank {
         return prefix != null ? prefix : "";
     }
 
+    @Override
+    public String getSuffix(UUID uuid) {
+        User user = getUser(uuid);
+        if (user == null) {
+            return "";
+        }
+
+        String suffix = user.getCachedData().getMetaData().getSuffix();
+        return suffix != null ? suffix : "";
+    }
+
     private User getUser(UUID uuid) {
         return this.luckPerms.getUserManager().getUser(uuid);
     }

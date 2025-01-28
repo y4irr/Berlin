@@ -14,9 +14,6 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.*;
 
-import static com.cryptomorin.xseries.messages.ActionBar.sendActionBar;
-
-
 public class PlayerListener implements Listener {
 
 	private final Berlin plugin;
@@ -30,15 +27,15 @@ public class PlayerListener implements Listener {
 		Player player = event.getPlayer();
 
 		float walkSpeed = (float) plugin.getConfigFile().getDouble("Player-Join.Speed");
-		sendActionBar(player, ChatUtil.translate("&f&ki&4❤&f&ki&r &d&l75% OFF &favailable at &2&lstore.cyruspvp.net &f&ki&4❤&f&ki&r"));
-		Bukkit.getScheduler().runTaskLater(this.plugin.getPlugin(), () -> {
-			player.sendMessage(ChatUtil.translate(new String[]{
-					"",
-					"&2&lHappy Holidays &4&l❤",
-					"&7We are celebrating our first Christmas together,",
-					"&7Thank you for all of your support &4&l❤",
-					""}));
-		}, 20L);
+//		sendActionBar(player, ChatUtil.translate("&f&ki&4❤&f&ki&r &d&l75% OFF &favailable at &2&lstore.cyruspvp.net &f&ki&4❤&f&ki&r"));
+//		Bukkit.getScheduler().runTaskLater(this.plugin.getPlugin(), () -> {
+//			player.sendMessage(ChatUtil.translate(new String[]{
+//					"",
+//					"&2&lHappy Holidays &4&l❤",
+//					"&7We are celebrating our first Christmas together,",
+//					"&7Thank you for all of your support &4&l❤",
+//					""}));
+//		}, 20L);
 		Bukkit.getScheduler().runTaskLater(this.plugin.getPlugin(), () -> { PlayerUtil.playSound(player, "CAT_PURR");}, 20L);
 		player.setHealth(20.0);
 		player.setFoodLevel(20);

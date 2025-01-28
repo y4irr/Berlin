@@ -19,7 +19,7 @@ public class InformationHotbar extends NormalHotbar {
     public void onItemInteract(Player player) {
         player.sendMessage(ChatUtil.translate(new String[]{
                 "&7&m------------------------",
-                "&2&lServer Information",
+                "&d&lServer Information",
                 "",
                 "&aStore&7: &fstore.cyruspvp.net",
                 "&9Discord&7: &fdiscord.cyruspvp.net",

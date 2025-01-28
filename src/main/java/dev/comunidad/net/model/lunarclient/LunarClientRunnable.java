@@ -8,11 +8,11 @@ import dev.comunidad.net.utilities.ChatUtil;
 import dev.comunidad.net.utilities.Berlin;
 import lombok.Setter;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.entity.Player;
 
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,27 +23,26 @@ public class LunarClientRunnable implements Runnable {
 
     public LunarClientRunnable(Berlin plugin) {
         this.plugin = plugin;
-        this.module = (NametagModule) Apollo.getModuleManager().getModule(NametagModule.class);
+        this.module = Apollo.getModuleManager().getModule(NametagModule.class);
     }
 
+    @Override
     public void run() {
-        Iterator var1 = Apollo.getPlayerManager().getPlayers().iterator();
+        for (ApolloPlayer player : Apollo.getPlayerManager().getPlayers()) {
+            for (ApolloPlayer viewer : Apollo.getPlayerManager().getPlayers()) {
+                Player bukkitPlayer = (Player) player.getPlayer();
 
-        while(var1.hasNext()) {
-            ApolloPlayer player = (ApolloPlayer)var1.next();
-            Iterator var3 = Apollo.getPlayerManager().getPlayers().iterator();
+                boolean isBanned = plugin.getBanManager().getBan().isBanned(bukkitPlayer.getUniqueId());
 
-            while(var3.hasNext()) {
-                ApolloPlayer viewer = (ApolloPlayer)var3.next();
-                List<Component> components = (List)this.plugin.getConfigFile().getStringList("lunar-client.nametag").stream().map((line) -> {
-                    String replacedLine = ChatUtil.placeholder((Player)player.getPlayer(), line);
+                String configSection = isBanned ? "lunar-client.banned" : "lunar-client.nametag";
+                List<Component> components = plugin.getConfigFile().getStringList(configSection).stream().map((line) -> {
+                    String replacedLine = ChatUtil.placeholder(bukkitPlayer, line);
                     return LegacyComponentSerializer.legacySection().deserialize(replacedLine);
                 }).collect(Collectors.toList());
+
                 Collections.reverse(components);
-                this.module.overrideNametag(viewer, player.getUniqueId(), Nametag.builder().lines(components).build());
+                module.overrideNametag(viewer, player.getUniqueId(), Nametag.builder().lines(components).build());
             }
         }
-
     }
 }
-

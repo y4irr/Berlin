@@ -2,6 +2,7 @@ package dev.comunidad.net.model.rank.impl;
 
 import dev.comunidad.net.model.rank.IRank;
 import me.activated.core.api.player.PlayerData;
+import me.activated.core.api.rank.RankData;
 import me.activated.core.plugin.AquaCoreAPI;
 
 import java.util.UUID;
@@ -17,5 +18,10 @@ public class AquaCore implements IRank {
     public String getPrefix (UUID playerUUID) {
         PlayerData data = AquaCoreAPI.INSTANCE.getPlayerData(playerUUID);
         return data == null ? "" : data.getHighestRank().getPrefix();
+    }
+    @Override
+    public String getSuffix (UUID playerUUID) {
+        PlayerData data = AquaCoreAPI.INSTANCE.getPlayerData(playerUUID);
+        return data == null ? "" : data.getHighestRank().getSuffix();
     }
 }

@@ -13,4 +13,7 @@ public class Default implements IRank {
     public String getPrefix(UUID playerUUID) {
         return "";
     }
+    public String getSuffix(UUID playerUUID) {
+        return "";
+    }
 }

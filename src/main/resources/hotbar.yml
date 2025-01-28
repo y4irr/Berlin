@@ -53,6 +53,14 @@ normal:
       data: 0
       slot: 5
       enchanted: true
+    message:
+      - "&7&m------------------------"
+      - "&d&lServer Information"
+      - ""
+      - "&aStore&7: &fstore.cyruspvp.net"
+      - "&9Discord&7: &fdiscord.cyruspvp.net"
+      - "&bTeamSpeak&7: &fts.cyruspvp.net"
+      - "&7&m------------------------"
   profile:
     enabled: true
     item:

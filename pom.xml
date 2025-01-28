@@ -60,6 +60,10 @@
             <id>lunarclient</id>
             <url>https://repo.lunarclient.dev</url>
         </repository>
+        <repository>
+            <id>ajRepo</id>
+            <url>https://repo.ajg0702.us/releases</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -102,6 +106,13 @@
         </dependency>
 
         <dependency>
+            <groupId>us.ajg0702.queue.api</groupId>
+            <artifactId>api</artifactId>
+            <version>2.0.7</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
             <version>1.20.2-R0.1-SNAPSHOT</version>
@@ -111,17 +122,17 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigotapi</artifactId>
-            <version>1.20.4-R0.1-SNAPSHOT</version>
+            <version>1.20.4</version>
             <scope>system</scope>
-            <systemPath>${basedir}/libs/spigot-1.20.4.jar</systemPath>
+            <systemPath>${project.basedir}/libs/spigots/1.20.4.jar</systemPath>
         </dependency>
 
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigotapi2</artifactId>
-            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <version>1.8.8</version>
             <scope>system</scope>
-            <systemPath>${basedir}/libs/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar</systemPath>
+            <systemPath>${project.basedir}/libs/spigots/1.8.jar</systemPath>
         </dependency>
 
         <dependency>
@@ -151,6 +162,23 @@
             <version>2.11.5</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>me.zowpy.core.api</groupId>
+            <artifactId>Volcano-API</artifactId>
+            <version>1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/ranks/VolcanoAPI.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>me.leoko</groupId>
+            <artifactId>LiteBansAPI</artifactId>
+            <version>1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/bans/LiteBansAPI.jar</systemPath>
+        </dependency>
+
 
         <dependency>
             <groupId>com.mojang</groupId>
@@ -226,7 +254,7 @@
             <artifactId>aquacore</artifactId>
             <version>dev</version>
             <scope>system</scope>
-            <systemPath>${basedir}/libs/AquaCoreAPI.jar</systemPath>
+            <systemPath>${project.basedir}/libs/ranks/AquaCoreAPI.jar</systemPath>
         </dependency>
 
         <dependency>
@@ -234,7 +262,7 @@
             <artifactId>helium</artifactId>
             <version>dev</version>
             <scope>system</scope>
-            <systemPath>${basedir}/libs/HeliumAPI-1.0-SNAPSHOT.jar</systemPath>
+            <systemPath>${project.basedir}/libs/ranks/HeliumAPI-1.0-SNAPSHOT.jar</systemPath>
         </dependency>
     </dependencies>
 

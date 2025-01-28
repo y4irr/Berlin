@@ -1,9 +1,6 @@
 package dev.comunidad.net.model.rank;
 
-import dev.comunidad.net.model.rank.impl.AquaCore;
-import dev.comunidad.net.model.rank.impl.Default;
-import dev.comunidad.net.model.rank.impl.Helium;
-import dev.comunidad.net.model.rank.impl.LuckPerms;
+import dev.comunidad.net.model.rank.impl.*;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -22,10 +19,12 @@ public class RankManager {
             this.rank = new LuckPerms();
         } else if (pluginManager.getPlugin("Helium") != null) {
             this.rank = new Helium();
+        } else if (pluginManager.getPlugin("Volcano") != null) {
+            this.rank = new Volcano();
+        } else if (pluginManager.getPlugin("Kup") != null) {
+            this.rank = new Kup();
         } else {
             this.rank = new Default();
         }
     }
 }
-
-

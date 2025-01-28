@@ -12,7 +12,6 @@ Features:
 - Custom Timers
 - Spawn system
 - Custom queue
-- Chat Management
 - Hotbar system (custom & normal)
 - ActionBar system
 - Essential Commands

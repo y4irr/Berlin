@@ -44,6 +44,4 @@ public class CustomMessagesListener implements Listener {
     public void onPlayerQuit(PlayerQuitEvent event) {
         event.setQuitMessage(null);
     }
-
 }
-

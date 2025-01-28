@@ -51,6 +51,21 @@ scoreboard:
     - "<timers>"
     - "<footer>"
     - "&7&m-------------------"
+  banned:
+    - "&7&m-------------------"
+    - "&fYou are currently"
+    - "&fbanned for&7: &d%ban_reason%"
+    - ""
+    - "&fExpires&7:"
+    - "&d%ban-expiration%"
+    - ""
+    - "&fOnline&7:"
+    - "&d%bungee_total% &7/ &d5,000"
+    - ""
+    - "<timers>"
+    - "<footer>"
+    - "&7&m-------------------"
+
   addons:
     queue: []
     timers:

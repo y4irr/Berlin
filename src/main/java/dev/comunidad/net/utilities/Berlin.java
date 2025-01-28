@@ -28,6 +28,7 @@ import dev.comunidad.net.database.mongo.MongoManager;
 import dev.comunidad.net.database.redis.RedisManager;
 import dev.comunidad.net.integrations.PlaceholderAPIHook;
 import dev.comunidad.net.listeners.*;
+import dev.comunidad.net.model.ban.BanManager;
 import dev.comunidad.net.model.custommessages.CustomMessagesListener;
 import dev.comunidad.net.listeners.hotbar.CustomHotbarListener;
 import dev.comunidad.net.listeners.hotbar.NormalHotbarListener;
@@ -80,6 +81,7 @@ public class Berlin {
 
     private CommandManager commandManager;
     private RankManager rankManager;
+    private BanManager banManager;
     private UserManager userManager;
     private SpawnManager spawnManager;
     private NormalHotbarManager normalHotbarManager;
@@ -195,6 +197,7 @@ public class Berlin {
         this.queueRankManager = new QueueRankManager(this);
         this.queueManager = new QueueManager(this);
         this.hcfCoreManager = new HCFCoreManager(this);
+        this.banManager = new BanManager();
 
         if (scoreboardFile.getBoolean("scoreboard.enabled")) {
             this.assemble = new Assemble(BerlinPlugin.getPlugin(), new AssembleProvider(this));

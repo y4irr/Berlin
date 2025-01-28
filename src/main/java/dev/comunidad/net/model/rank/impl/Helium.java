@@ -16,4 +16,9 @@ public class Helium implements IRank {
     public String getPrefix(UUID playerUUID) {
         return HeliumAPI.INSTANCE.getRankPrefix(playerUUID);
     }
+
+    @Override
+    public String getSuffix(UUID playerUUID) {
+        return HeliumAPI.INSTANCE.getRankSuffix(playerUUID);
+    }
 }
