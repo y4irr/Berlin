@@ -67,27 +67,14 @@ public class StringUtils {
         net.md_5.bungee.api.ChatColor color;
 
         // Hex Color Support
-        if (MINOR_VERSION >= 16) {
-            try {
-                // Convert bukkit's &x based hex color to something bungee color can read (#FFFFFF)
-                String hexColor = prefixColor.replace("§", "").replace("x", "#");
-                color = net.md_5.bungee.api.ChatColor.of(hexColor);
-            } catch (Exception e) {
-                // If the color is not a hex color, then it's a normal color code
-                ChatColor bukkitColor = ChatColor.getByChar(prefixColor.substring(prefixColor.length() - 1).charAt(0));
-                if (bukkitColor == null) {
-                    return null;
-                }
-                color = bukkitColor.asBungee();
-            }
-        } else {
-            // Obviously in older versions, hex color does not exist, so we just parse it normally
-            ChatColor bukkitColor = ChatColor.getByChar(prefixColor.substring(prefixColor.length() - 1).charAt(0));
-            if (bukkitColor == null) {
-                return null;
-            }
-            color = bukkitColor.asBungee();
+
+        // Obviously in older versions, hex color does not exist, so we just parse it normally
+        ChatColor bukkitColor = ChatColor.getByChar(prefixColor.substring(prefixColor.length() - 1).charAt(0));
+        if (bukkitColor == null) {
+            return null;
         }
+        color = bukkitColor.asBungee();
+
         return color;
     }
 
@@ -102,20 +89,6 @@ public class StringUtils {
         if (text == null) return "";
 
         text = ChatColor.translateAlternateColorCodes('&', text);
-
-        if (MINOR_VERSION >= 16) {
-            Matcher matcher = hexPattern.matcher(text);
-            while (matcher.find()) {
-                try {
-                    String color = matcher.group();
-                    String hexColor = color.replace("&", "").replace("x", "#");
-                    val bungeeColor = net.md_5.bungee.api.ChatColor.of(hexColor);
-                    text = text.replace(color, bungeeColor.toString());
-                } catch (Exception ignored) {
-                    // Errors about unknown group, can be safely ignored!
-                }
-            }
-        }
         return text;
     }
 }

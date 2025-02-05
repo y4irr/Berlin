@@ -30,9 +30,7 @@ public class ActionBarAPI {
 
         if (actionBarMessageEvent.isCancelled()) return;
 
-        if (SERVER_VERSION >= 19) {
-            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(ChatUtil.translate(message)));
-        } else if (SERVER_VERSION > 16 || SERVER_VERSION < 11) {
+        if (SERVER_VERSION > 16 || SERVER_VERSION < 11) {
             ProtocolManager protocolManager = ProtocolLibrary.getProtocolManager();
             PacketContainer actionBarPacket;
             WrappedChatComponent wrappedChatComponent = WrappedChatComponent.fromText(message);
