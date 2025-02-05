@@ -1,4 +1,6 @@
+import dev.y4irr.repository.configureNexusPublishing
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+import java.io.StringWriter
 
 plugins {
     java
@@ -71,7 +73,31 @@ tasks.withType<JavaCompile> {
 
 tasks.withType<Jar> {
     archiveBaseName.set("Berlin")
-    archiveVersion.set("1.1")
+    archiveVersion.set("${project.version}")
+
+
+    doFirst {
+        val writer = StringWriter()
+        val pluginData = mapOf(
+            "main" to "net.cyruspvp.hub.BerlinPlugin",
+            "name" to project.name,
+            "version" to project.version,
+            "authors" to listOf("Astro Operations", "C0munidad_", "Yair Soto"),
+            "api-version" to "1.13",
+            "depend" to listOf("PlaceholderAPI", "ProtocolLib"),
+            "softdepend" to listOf("Kup", "Volcano")
+        )
+
+        pluginData.toYaml(writer)
+
+        val pluginYamlFile = file("$buildDir/generated/plugin.yml")
+        pluginYamlFile.parentFile.mkdirs()
+        pluginYamlFile.writeText(writer.toString())
+    }
+
+    from("$buildDir/generated") {
+        include("plugin.yml")
+    }
 }
 
 publishing {
@@ -91,7 +117,7 @@ tasks.build {
 
 tasks.named<ShadowJar>("shadowJar") {
     archiveBaseName.set("Berlin")
-    archiveVersion.set("1.1")
+    archiveVersion.set("${project.version}")
     minimize()
 
     relocate("de.tr7zw.changeme.nbtapi", "dev.comunidad.net.libs.nbtapi")
@@ -99,3 +125,21 @@ tasks.named<ShadowJar>("shadowJar") {
     relocate("fr.mrmicky.fastparticles", "dev.comunidad.net.libs.fastparticles")
     relocate("com.github.retrooper", "xyz.refinedev.lib.com.github.retrooper")
 }
+
+fun Map<String, Any>.toYaml(writer: StringWriter, indent: String = "") {
+    for ((key, value) in this) {
+        when (value) {
+            is String -> writer.write("$indent$key: $value\n")
+            is List<*> -> {
+                writer.write("$indent$key:\n")
+                value.forEach { item -> writer.write("$indent  - $item\n") }
+            }
+            is Map<*, *> -> {
+                writer.write("$indent$key:\n")
+                (value as Map<String, Any>).toYaml(writer, "$indent  ")
+            }
+        }
+    }
+}
+
+configureNexusPublishing()

@@ -1,9 +1,0 @@
-main: net.cyruspvp.hub.BerlinPlugin
-name: ${project.name}
-version: ${project.version}
-authors: ["Astro Operations", "C0munidad_", "Yair Soto"]
-api-version: 1.13
-depend: ["PlaceholderAPI", "ProtocolLib"]
-softdepend:
-  - Kup
-  - Volcano
