@@ -6,7 +6,7 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
-group = "dev.comunidad.net"
+group = "net.cyruspvp.hub"
 version = "1.1"
 
 repositories {
