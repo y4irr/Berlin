@@ -1,6 +1,5 @@
 package net.cyruspvp.hub.model.rank;
 
-import dev.comunidad.net.model.rank.impl.*;
 import lombok.Getter;
 import net.cyruspvp.hub.model.rank.impl.*;
 import org.bukkit.Bukkit;

@@ -1,6 +1,5 @@
 package net.cyruspvp.hub.model.ban;
 
-import dev.comunidad.net.model.ban.impl.*;
 import lombok.Getter;
 import net.cyruspvp.hub.model.ban.impl.AquacoreBan;
 import net.cyruspvp.hub.model.ban.impl.DefaultBan;
