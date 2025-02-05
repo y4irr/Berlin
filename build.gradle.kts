@@ -1,6 +1,8 @@
 import dev.y4irr.repository.configureNexusPublishing
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 import java.io.StringWriter
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 plugins {
     java
@@ -8,8 +10,10 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
+val currentDate: String = LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+
 group = "net.cyruspvp.hub"
-version = "1.1"
+version = currentDate
 
 repositories {
     mavenCentral()
