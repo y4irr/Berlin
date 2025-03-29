@@ -1,7 +1,6 @@
 package net.cyruspvp.hub.model.timer;
 
-import net.cyruspvp.hub.BerlinPlugin;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 
@@ -15,7 +14,7 @@ public class TimerTask implements Runnable {
     public TimerTask(Berlin plugin, Timer timer) {
         this.plugin = plugin;
         this.timer = timer;
-        this.id = Bukkit.getScheduler().runTaskTimerAsynchronously(BerlinPlugin.getPlugin(), this, 0L, 20L).getTaskId();
+        this.id = Bukkit.getScheduler().runTaskTimerAsynchronously(Berlin.getPlugin(), this, 0L, 20L).getTaskId();
     }
 
     @Override

@@ -3,7 +3,7 @@ package net.cyruspvp.hub.scoreboard;
 import net.cyruspvp.hub.model.ban.BanManager;
 import net.cyruspvp.hub.model.rank.RankManager;
 import net.cyruspvp.hub.scoreboard.animation.ScoreboardAnimated;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.model.queue.Queue;
 import net.cyruspvp.hub.model.queue.QueueManager;
 import net.cyruspvp.hub.model.timer.Timer;
@@ -102,6 +102,12 @@ public class AssembleProvider implements AssembleAdapter {
         long duration = banManager.getBan().getBanDuration(player.getUniqueId());
         return duration == -1 ? "Permanent" : JavaUtil.formatMillis(duration);
     }
+    private String getExecutor(Player player) {
+        if (banManager == null || banManager.getBan() == null) {
+            return "Console";
+        }
+        return banManager.getBan().getExecutor(player.getUniqueId());
+    }
 
     private void handleQueueLines(Player player, List<String> lines) {
         Queue queue = queueManager.getQueueByPlayer(player);
@@ -128,6 +134,7 @@ public class AssembleProvider implements AssembleAdapter {
     private String handleBannedPlaceholders(Player player, String line) {
         if (line.contains("%ban-reason%")) line = line.replace("%ban-reason%", getBanReason(player));
         if (line.contains("%ban-expiration%")) line = line.replace("%ban-expiration%", getBanTimeLeft(player));
+        if (line.contains("%ban-executer%")) line = line.replace("%ban-executer%", getExecutor(player));
 
         return ChatUtil.placeholder(player, line);
     }
@@ -140,7 +147,10 @@ public class AssembleProvider implements AssembleAdapter {
             line = line.replace("%rank-suffix%", getRankManager().getRank().getSuffix(player.getUniqueId()));
         }
         if (line.contains("%rank-name%")) {
-            line = line.replace("%rank-name%", getRankManager().getRank().getRankName(player.getUniqueId()));
+            line = line.replace("%rank-name%", getRankManager().getRank().getName(player.getUniqueId()));
+        }
+        if (line.contains("%rank-color%")) {
+            line = line.replace("%rank-color%", getRankManager().getRank().getColor(player.getUniqueId()));
         }
         return line;
     }

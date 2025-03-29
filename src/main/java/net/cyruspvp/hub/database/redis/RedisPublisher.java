@@ -1,7 +1,7 @@
 package net.cyruspvp.hub.database.redis;
 
 import com.google.gson.Gson;
-import net.cyruspvp.hub.BerlinPlugin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.utilities.ChatUtil;
 import net.cyruspvp.hub.model.queue.Queue;
 import redis.clients.jedis.JedisPubSub;
@@ -25,9 +25,9 @@ public class RedisPublisher extends JedisPubSub {
         if (Objects.requireNonNull(redisMessage.getPayload()) == RedisPayload.QUEUE_PAUSE_UPDATE) {
             String queueName = redisMessage.getParam("queue-name");
 
-            if (!BerlinPlugin.get().getQueueManager().exists(queueName)) return;
+            if (!Berlin.get().getQueueManager().exists(queueName)) return;
 
-            Queue queue = BerlinPlugin.get().getQueueManager().getQueue(queueName);
+            Queue queue = Berlin.get().getQueueManager().getQueue(queueName);
             queue.setPaused(!Boolean.parseBoolean(redisMessage.getParam("queue-pause")));
         } else {
             ChatUtil.logger("&c[Redis] The message was received, but there was no response");

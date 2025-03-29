@@ -2,7 +2,7 @@ package net.cyruspvp.hub.model.hotbar.normal.types;
 
 import net.cyruspvp.hub.model.hotbar.normal.NormalHotbar;
 import net.cyruspvp.hub.profile.ProfileMenu;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.utilities.PlayerUtil;
 import org.bukkit.entity.Player;
 

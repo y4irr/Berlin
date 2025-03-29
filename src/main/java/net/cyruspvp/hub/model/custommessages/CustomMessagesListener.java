@@ -1,6 +1,6 @@
 package net.cyruspvp.hub.model.custommessages;
 
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

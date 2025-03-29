@@ -1,0 +1,141 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.cyruspvp.hub",
+    "module": "Berlin",
+    "version": "28.03.2025",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.10"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "Berlin-28.03.2025.jar",
+          "url": "Berlin-28.03.2025.jar",
+          "size": 392398,
+          "sha512": "c6f9d228795534e968353c2210622daa5a1030668504f3f82d47433f3af029ae59d469dba23f652445768c15f75d713d590083cb2a8f61d641a99c1302fbfa84",
+          "sha256": "9ea2304e774ff982781e10e01a414026a3d48d5a1013cc47ffb59e34238cf564",
+          "sha1": "d41f49cf256888383b7aea88713e8d5a57a4cdc2",
+          "md5": "e26fba0035a9c584689427dee3109681"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.github.retrooper.packetevents",
+          "module": "spigot",
+          "version": {
+            "requires": "2.2.1"
+          },
+          "excludes": [
+            {
+              "group": "com.google.code.gson",
+              "module": "gson"
+            },
+            {
+              "group": "org.jetbrains",
+              "module": "annotations"
+            }
+          ]
+        },
+        {
+          "group": "org.mongodb",
+          "module": "mongo-java-driver",
+          "version": {
+            "requires": "3.12.11"
+          }
+        },
+        {
+          "group": "redis.clients",
+          "module": "jedis",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.8.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "4.10.0"
+          }
+        },
+        {
+          "group": "org.json",
+          "module": "json",
+          "version": {
+            "requires": "20230227"
+          }
+        },
+        {
+          "group": "com.github.cryptomorin",
+          "module": "XSeries",
+          "version": {
+            "requires": "9.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "Berlin-28.03.2025.jar",
+          "url": "Berlin-28.03.2025.jar",
+          "size": 392398,
+          "sha512": "c6f9d228795534e968353c2210622daa5a1030668504f3f82d47433f3af029ae59d469dba23f652445768c15f75d713d590083cb2a8f61d641a99c1302fbfa84",
+          "sha256": "9ea2304e774ff982781e10e01a414026a3d48d5a1013cc47ffb59e34238cf564",
+          "sha1": "d41f49cf256888383b7aea88713e8d5a57a4cdc2",
+          "md5": "e26fba0035a9c584689427dee3109681"
+        }
+      ]
+    },
+    {
+      "name": "shadowRuntimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "shadowed",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "Berlin-28.03.2025-all.jar",
+          "url": "Berlin-28.03.2025-all.jar",
+          "size": 5815440,
+          "sha512": "284ae03fdff7182326be5b849cddada375654d0a4042bbf96a65115cc7405f0e3514d279686c88e0c335fa73f25c2c29bf8e4d40c17e5dba7b6877bb59be1116",
+          "sha256": "c153d158b0038419ad445d895fa74aace49668748da41270e2a287faa6218817",
+          "sha1": "bc7e12f4ae20413fbb68e3c2ca2954eefb05441b",
+          "md5": "f5c03fbaaf300cddd6e565b44f14fdd3"
+        }
+      ]
+    }
+  ]
+}

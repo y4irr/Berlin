@@ -15,7 +15,7 @@ public class LuckPerms implements IRank {
     }
 
     @Override
-    public String getRankName(UUID uuid) {
+    public String getName(UUID uuid) {
         User user = getUser(uuid);
         return user == null ? "" : user.getPrimaryGroup();
     }
@@ -40,6 +40,17 @@ public class LuckPerms implements IRank {
 
         String suffix = user.getCachedData().getMetaData().getSuffix();
         return suffix != null ? suffix : "";
+    }
+
+    @Override
+    public String getColor(UUID uuid) {
+        User user = getUser(uuid);
+        if (user == null) {
+            return "";
+        }
+
+        String color = user.getCachedData().getMetaData().getMetaValue("color");
+        return color != null ? color : "";
     }
 
     private User getUser(UUID uuid) {

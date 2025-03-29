@@ -4,9 +4,8 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.MongoException;
 import com.mongodb.client.MongoDatabase;
-import net.cyruspvp.hub.BerlinPlugin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.utilities.ChatUtil;
-import net.cyruspvp.hub.utilities.Berlin;
 import lombok.Getter;
 
 import java.util.logging.Level;
@@ -35,10 +34,10 @@ public class Mongo {
             this.mongoClient = new MongoClient(uri);
             this.database = mongoClient.getDatabase(uri.getDatabase());
             this.connected = true;
-            ChatUtil.logger("&a[" + BerlinPlugin.getPlugin().getName() + "] MongoDB successfully connected to " + name + " database.");
+            ChatUtil.logger("&a[" + Berlin.getPlugin().getName() + "] MongoDB successfully connected to " + name + " database.");
         }
         catch (MongoException | IllegalArgumentException | NullPointerException exception) {
-            ChatUtil.logger("&c[" + BerlinPlugin.getPlugin().getName() + "] &cMongoDB failed to connect to " + name + " database.");
+            ChatUtil.logger("&c[" + Berlin.getPlugin().getName() + "] &cMongoDB failed to connect to " + name + " database.");
         }
     }
 }

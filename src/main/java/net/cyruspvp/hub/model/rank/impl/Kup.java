@@ -9,7 +9,7 @@ import java.util.UUID;
 public class Kup implements IRank {
 
     @Override
-    public String getRankName(UUID uuid) {
+    public String getName(UUID uuid) {
         Profile profile = CoreAPI.getInstance().getProfileManager().getByUUID(uuid);
         return profile.getDisplayRank().getDisplayName();
     }
@@ -24,5 +24,11 @@ public class Kup implements IRank {
     public String getSuffix(UUID uuid) {
         Profile profile = CoreAPI.getInstance().getProfileManager().getByUUID(uuid);
         return profile.getDisplayRank().getSuffix();
+    }
+
+    @Override
+    public String getColor(UUID uuid) {
+        Profile profile = CoreAPI.getInstance().getProfileManager().getByUUID(uuid);
+        return profile.getDisplayRank().getDisplayColor();
     }
 }

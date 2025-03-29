@@ -1,7 +1,7 @@
 package net.cyruspvp.hub.listeners;
 
 import net.cyruspvp.hub.utilities.ChatUtil;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;

@@ -1,6 +1,6 @@
 package net.cyruspvp.hub.listeners;
 
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.model.spawn.SpawnManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

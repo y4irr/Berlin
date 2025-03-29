@@ -1,6 +1,6 @@
 package net.cyruspvp.hub.user;
 
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.utilities.ChatUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

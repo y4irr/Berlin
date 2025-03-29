@@ -1,9 +1,8 @@
 package net.cyruspvp.hub.model.hcfcore;
 
-import net.cyruspvp.hub.BerlinPlugin;
 import net.cyruspvp.hub.model.hcfcore.vapor.VaporHCF;
 import net.cyruspvp.hub.model.hcfcore.vapor.VaporKitMap;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.database.mongo.MongoManager;
 import net.cyruspvp.hub.model.hcfcore.azurite.AzuriteHCF;
 import net.cyruspvp.hub.model.hcfcore.azurite.AzuriteKitMap;
@@ -25,7 +24,7 @@ public class HCFCoreManager {
             hcfCoreType = HCFCoreType.valueOf(plugin.getConfigFile().getString("hcfcore-type").toUpperCase());
         }
         catch (Exception ex) {
-            ChatUtil.logger("&c[" + BerlinPlugin.getPlugin().getName() + "] HCFCore failed to connect.");
+            ChatUtil.logger("&c[" + Berlin.getPlugin().getName() + "] HCFCore failed to connect.");
             return;
         }
 
@@ -43,6 +42,6 @@ public class HCFCoreManager {
         }
 
 
-        ChatUtil.logger("&a[" + BerlinPlugin.getPlugin().getName() + "] HCFCore " + hcfCoreType.name() + " successfully connected.");
+        ChatUtil.logger("&a[" + Berlin.getPlugin().getName() + "] HCFCore " + hcfCoreType.name() + " successfully connected.");
     }
 }

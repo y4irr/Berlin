@@ -1,0 +1,9 @@
+mongo-uri:
+  Berlin: ""
+  hcf: ""
+  kitmap: ""
+
+redis:
+  host: "localhost"
+  port: 6379
+  password: ""

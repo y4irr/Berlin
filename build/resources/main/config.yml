@@ -1,0 +1,51 @@
+# HCFCore Type
+# "VAPOR", "LAZARUS" or "AZURITE"
+# This option is only for the HCFCore plugin.
+hcfcore-type: ""
+
+# Use "FILE" or "MONGO"
+save_method: "FILE"
+
+double-jump:
+  enabled: true
+  effect: "EXPLOSION_HUGE"
+  sound: "BAT_TAKEOFF"
+  velocity: 1.5
+
+custom-chat:
+  enabled: true
+  format: "%rank%%player%&7:&f %message%"
+
+Player-Join:
+  Sound: "CAT_MEOW"
+  Speed: 0.2
+
+welcome:
+  message:
+    - "&7&m                                                                 "
+    - "&fWelcome to &2&lCyrusPvP &4Hub-01 &d%player%"
+    - ""
+    - " &8● &a&lStore&7: &fstore.cyruspvp.net"
+    - " &8● &b&lTeamSpeak&7: &fts.cyruspvp.net"
+    - " &8● &9&lDiscord&7: &fdiscord.cyruspvp.net"
+    - ""
+    - "&7&oUse the watch to travel into the network"
+    - "&7&m                                                                 "
+
+Title:
+  Line1: "&2&lCyrusPvP"
+  Line2: "&eMerry Christmas!!!"
+
+lunar-client:
+  enabled: true
+  nametag:
+    - "&7Ping: &f%player_ping%ms"
+    - "%luckperms_groups%%player_name%"
+
+action-bar:
+  enabled: false
+  interval: 5
+  messages:
+    - ""
+
+spawn-location: ""

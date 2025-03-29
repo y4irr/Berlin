@@ -1,7 +1,7 @@
 package net.cyruspvp.hub.model.spawn;
 
 import net.cyruspvp.hub.utilities.BukkitUtil;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import lombok.Getter;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;

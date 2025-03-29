@@ -4,7 +4,7 @@ import net.cyruspvp.hub.utilities.ChatUtil;
 import net.cyruspvp.hub.command.BaseCommand;
 import net.cyruspvp.hub.command.Command;
 import net.cyruspvp.hub.command.CommandArgs;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import org.bukkit.command.CommandSender;
 
 public class DiscordCommand extends BaseCommand {

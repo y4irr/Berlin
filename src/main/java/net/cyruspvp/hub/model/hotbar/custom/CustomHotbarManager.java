@@ -2,7 +2,7 @@ package net.cyruspvp.hub.model.hotbar.custom;
 
 import net.cyruspvp.hub.utilities.file.FileConfig;
 import net.cyruspvp.hub.utilities.item.ItemBuilder;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;

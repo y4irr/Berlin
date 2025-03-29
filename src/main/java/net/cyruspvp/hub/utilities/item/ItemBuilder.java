@@ -146,4 +146,12 @@ public class ItemBuilder {
         this.itemStack.setItemMeta(this.itemMeta);
         return this.itemStack;
     }
+
+    public ItemBuilder setLeatherArmorColor(Color color) {
+        if (this.itemMeta instanceof LeatherArmorMeta) {
+            LeatherArmorMeta leatherMeta = (LeatherArmorMeta) this.itemMeta;
+            leatherMeta.setColor(color);
+        }
+        return this;
+    }
 }

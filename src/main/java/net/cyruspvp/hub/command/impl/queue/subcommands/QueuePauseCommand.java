@@ -7,7 +7,7 @@ import net.cyruspvp.hub.utilities.ChatUtil;
 import net.cyruspvp.hub.command.BaseCommand;
 import net.cyruspvp.hub.command.Command;
 import net.cyruspvp.hub.command.CommandArgs;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.model.queue.Queue;
 import net.cyruspvp.hub.model.queue.QueueManager;
 import net.cyruspvp.hub.utilities.file.FileConfig;

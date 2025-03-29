@@ -1,6 +1,6 @@
 package net.cyruspvp.hub.user;
 
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.database.mongo.Mongo;
 import net.cyruspvp.hub.user.database.Database;
 import net.cyruspvp.hub.user.database.impl.FlatFileDatabase;

@@ -1,6 +1,6 @@
 package net.cyruspvp.hub.model.selector;
 
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.utilities.file.FileConfig;
 import net.cyruspvp.hub.utilities.item.ItemBuilder;
 import lombok.Getter;

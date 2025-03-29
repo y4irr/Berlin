@@ -37,4 +37,13 @@ public class VolcanoBan implements IBan {
         }
         return profile.getBanPunishment().getDuration();
     }
+
+    @Override
+    public String getExecutor(UUID playerUUID) {
+        Profile profile = CoreAPI.getInstance().getProfileManager().getByUUID(playerUUID);
+        if (profile == null) {
+            return "Console";
+        }
+        return String.valueOf(profile.getBanPunishment().getIssuer());
+    }
 }

@@ -9,7 +9,7 @@ import java.util.UUID;
 public class AquaCore implements IRank {
 
     @Override
-    public String getRankName(UUID uuid) {
+    public String getName(UUID uuid) {
         PlayerData data = AquaCoreAPI.INSTANCE.getPlayerData(uuid);
         return data == null ? "" : data.getHighestRank().getName();
     }
@@ -22,5 +22,11 @@ public class AquaCore implements IRank {
     public String getSuffix (UUID playerUUID) {
         PlayerData data = AquaCoreAPI.INSTANCE.getPlayerData(playerUUID);
         return data == null ? "" : data.getHighestRank().getSuffix();
+    }
+
+    @Override
+    public String getColor(UUID uuid) {
+        PlayerData data = AquaCoreAPI.INSTANCE.getPlayerData(uuid);
+        return data == null ? "" : String.valueOf(data.getHighestRank().getColor());
     }
 }

@@ -8,7 +8,7 @@ import java.util.UUID;
 public class Helium implements IRank {
 
     @Override
-    public String getRankName(UUID uuid) {
+    public String getName(UUID uuid) {
         return HeliumAPI.INSTANCE.getRankName(uuid);
     }
 
@@ -20,5 +20,10 @@ public class Helium implements IRank {
     @Override
     public String getSuffix(UUID playerUUID) {
         return HeliumAPI.INSTANCE.getRankSuffix(playerUUID);
+    }
+
+    @Override
+    public String getColor(UUID uuid) {
+        return HeliumAPI.INSTANCE.getRankColor(uuid);
     }
 }

@@ -1,6 +1,6 @@
 package net.cyruspvp.hub.listeners.hotbar;
 
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.model.hotbar.custom.CustomHotbar;
 import net.cyruspvp.hub.model.hotbar.custom.CustomHotbarManager;
 import org.bukkit.entity.Player;

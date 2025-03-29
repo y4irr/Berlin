@@ -1,0 +1,60 @@
+menu:
+  title: "&dBunkers Categories"
+  rows: 3
+  fill:
+    enabled: true
+    style: "border" # Opciones: "border", "cross", "checker", "default"
+    material: "STAINED_GLASS_PANE"
+    data: 15
+    name: "&7&ostore.cyruspvp.net"
+    glow: true
+
+sub-servers:
+  Bunkers-1:
+    item:
+      head: ""
+      name: "&d▪ &lBunkers-01 &d▪"
+      description:
+        - ""
+        - "&d┃ &fPlayers&7: &d%bungee_bunkers% &7(%ajqueue_queuedfor_bunkers% queued)"
+        - "&d┃ &fStatus&7: &d%ajqueue_status_bunkers%"
+        - ""
+        - "&aClick to join queue."
+      material: "ENDER_CHEST"
+      data: 0
+      slot: 12
+      enchanted: true
+    sub-server: "bunkers-1"
+    commands: ["player:joinqueue bunkers"]
+  Bunkers-2:
+    item:
+      head: ""
+      name: "&d▪ &lBunkers-02 &d▪"
+      description:
+        - ""
+        - "&d┃ &fPlayers&7: &d%bungee_bunkers% &7(%ajqueue_queuedfor_bunkers% queued)"
+        - "&d┃ &fStatus&7: &d%ajqueue_status_bunkers%"
+        - ""
+        - "&aClick to join queue."
+      material: "ENDER_CHEST"
+      data: 0
+      slot: 13
+      enchanted: true
+    sub-server: "bunkers-1"
+    commands: ["player:joinqueue bunkers"]
+  Bunkers-3:
+    item:
+      head: ""
+      name: "&d▪ &lBunkers-03 &d▪"
+      description:
+        - ""
+        - "&d┃ &fPlayers&7: &d%bungee_bunkers% &7(%ajqueue_queuedfor_bunkers% queued)"
+        - "&d┃ &fStatus&7: &d%ajqueue_status_bunkers%"
+        - ""
+        - "&aClick to join queue."
+      material: "ENDER_CHEST"
+      data: 0
+      slot: 14
+      enchanted: true
+    sub-server: "bunkers-1"
+    commands: ["player:joinqueue bunkers"]

@@ -2,7 +2,7 @@ package net.cyruspvp.hub.utilities;
 
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
-import net.cyruspvp.hub.BerlinPlugin;
+import net.cyruspvp.hub.Berlin;
 import lombok.experimental.UtilityClass;
 import org.bukkit.entity.Player;
 
@@ -24,7 +24,7 @@ public class BungeeUtil {
             out.writeUTF(player.getName());
             out.writeUTF(server);
 
-            player.sendPluginMessage(BerlinPlugin.getPlugin(), "BungeeCord", out.toByteArray());
+            player.sendPluginMessage(Berlin.getPlugin(), "BungeeCord", out.toByteArray());
         }
         catch (Exception exception) {
             ChatUtil.sendMessage(player, "&cAn error occurred while trying to send you to the server.");

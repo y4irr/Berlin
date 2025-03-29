@@ -9,7 +9,7 @@ package net.cyruspvp.hub.profile;
  * Date: 13 - nov
  */
 
-import net.cyruspvp.hub.BerlinPlugin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.procedure.ChatProcedurePrompt;
 import net.cyruspvp.hub.user.User;
 import net.cyruspvp.hub.utilities.ChatUtil;
@@ -32,7 +32,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class ProfileMenu extends Menu {
 
-    private final BerlinPlugin plugin;
+    private final Berlin plugin;
     private final Player target;
 
     @Override
@@ -43,7 +43,7 @@ public class ProfileMenu extends Menu {
     @Override
     public Map<Integer, Button> getButtons(Player player) {
         HashMap<Integer, Button> buttons = new HashMap<>();
-        User user = BerlinPlugin.get().getUserManager().getUser(target.getUniqueId());
+        User user = Berlin.get().getUserManager().getUser(target.getUniqueId());
 
         for (int i = 0; i <= 8; i++) {
             buttons.put(i, decorativeItem());

@@ -1,6 +1,6 @@
 package net.cyruspvp.hub.model.queue.rank;
 
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.model.rank.RankManager;
 import net.cyruspvp.hub.utilities.file.FileConfig;
 import org.bukkit.configuration.ConfigurationSection;
@@ -43,7 +43,7 @@ public class QueueRankManager {
     }
 
     public QueueRank getQueueRankByRank(UUID uuid) {
-        return queueRanks.get(rankManager.getRank().getRankName(uuid));
+        return queueRanks.get(rankManager.getRank().getName(uuid));
     }
 
     public void loadOrCreate(String name, ConfigurationSection section) {

@@ -1,0 +1,11 @@
+LUNAR_API:
+  FIX_1_8_HIT_DELAY: true # Viper does this aswell, it fixes the hit delay for lunar client only
+
+NAMETAGS:
+  FORMAT: # You can use %rank-name% and %rank-color% aswell
+    BANNED:
+      - '&7[Mod Mode]'
+      - '%vanishsymbol%%rank-suffix%%name%'
+    NORMAL:
+      - '%name%'
+      - '&f%health% &4❤'

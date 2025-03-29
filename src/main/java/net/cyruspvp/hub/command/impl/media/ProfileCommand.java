@@ -14,7 +14,7 @@ import net.cyruspvp.hub.command.Command;
 import net.cyruspvp.hub.command.CommandArgs;
 import net.cyruspvp.hub.profile.ProfileMenu;
 import net.cyruspvp.hub.utilities.ChatUtil;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.utilities.PlayerUtil;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;

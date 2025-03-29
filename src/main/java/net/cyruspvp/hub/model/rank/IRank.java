@@ -4,7 +4,8 @@ import java.util.UUID;
 
 public interface IRank {
 
-    String getRankName(UUID uuid);
+    String getName(UUID uuid);
     String getPrefix (UUID playerUUID);
     String getSuffix (UUID playerUUID);
+    String getColor (UUID uuid);
 }

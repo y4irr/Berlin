@@ -1,6 +1,6 @@
 package net.cyruspvp.hub.database.redis;
 
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import lombok.Getter;
 
 /**

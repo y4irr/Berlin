@@ -30,14 +30,24 @@ repositories {
 }
 
 dependencies {
-    compileOnly("com.github.retrooper.packetevents:spigot:2.2.1") {
+    // Cambié compileOnly a implementation para que PacketEvents se incluya en el JAR final
+    implementation("com.github.retrooper.packetevents:spigot:2.2.1") {
         exclude(group = "com.google.code.gson", module = "gson")
         exclude(group = "org.jetbrains", module = "annotations")
     }
 
+    // Dependencias locales
+    compileOnly(files("libs/spigots/1.8.8.jar"))
+    compileOnly(files("libs/spigots/1.16.jar"))
+    compileOnly(files("libs/spigots/1.7.10.jar"))
+    compileOnly(files("libs/spigots/1.17.jar"))
+    compileOnly(files("libs/client/CheatBreakerAPI.jar"))
+    compileOnly(files("libs/ViaVersion.jar"))
+    compileOnly(files("libs/ViaVersionLatest.jar"))
+    compileOnly(files("libs/ProtocolSupport.jar"))
+
     compileOnly("com.lunarclient:apollo-api:1.1.5")
     compileOnly("com.lunarclient:apollo-extra-adventure4:1.1.6")
-    compileOnly("org.spigotmc:spigot-api:1.20.2-R0.1-SNAPSHOT")
     compileOnly("us.ajg0702.queue.api:api:2.0.7")
 
     compileOnly("org.spigotmc:spigot-api:1.20.2-R0.1-SNAPSHOT") {
@@ -46,13 +56,12 @@ dependencies {
         exclude(group = "com.mojang", module = "logging")
     }
 
-    compileOnly(fileTree("libs/spigots") { include("1.20.4.jar", "1.8.jar") })
     compileOnly("it.unimi.dsi:fastutil:8.5.12")
     compileOnly("org.projectlombok:lombok:1.18.26")
     annotationProcessor("org.projectlombok:lombok:1.18.26")
     compileOnly("net.luckperms:api:5.4")
     compileOnly("me.clip:placeholderapi:2.11.5")
-    compileOnly(fileTree("libs/ranks") { include("VolcanoAPI.jar", "AquaCoreAPI.jar", "HeliumAPI-1.0-SNAPSHOT.jar") })
+    compileOnly(fileTree("libs/ranks") { include("VolcanoAPI.jar", "AquaCore-API.jar", "HeliumAPI-1.0-SNAPSHOT.jar") })
     compileOnly(fileTree("libs/bans") { include("LiteBansAPI.jar") })
     compileOnly("com.mojang:authlib:1.5.25")
     compileOnly("com.github.MylesIsCool:ViaVersion:3.2.1")
@@ -63,12 +72,12 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
     implementation("org.json:json:20230227")
     compileOnly("de.tr7zw:item-nbt-api:2.11.3")
-    compileOnly("com.github.cryptomorin:XSeries:9.9.0")
+    implementation("com.github.cryptomorin:XSeries:9.9.0") // Cambié compileOnly a implementation para incluirlo en el JAR final
     compileOnly("fr.mrmicky:FastParticles:2.0.1")
 }
 
 java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(11))
+    toolchain.languageVersion.set(JavaLanguageVersion.of(8))
 }
 
 tasks.withType<JavaCompile> {
@@ -79,17 +88,16 @@ tasks.withType<Jar> {
     archiveBaseName.set("Berlin")
     archiveVersion.set("${project.version}")
 
-
     doFirst {
         val writer = StringWriter()
         val pluginData = mapOf(
-            "main" to "net.cyruspvp.hub.BerlinPlugin",
+            "main" to "net.cyruspvp.hub.Berlin",
             "name" to project.name,
             "version" to project.version,
-            "authors" to listOf("Astro Operations", "C0munidad_", "Yair Soto"),
+            "authors" to listOf("Astro Operations", "Comunidad", "Yair Soto"),
             "api-version" to "1.13",
             "depend" to listOf("PlaceholderAPI", "ProtocolLib"),
-            "softdepend" to listOf("Kup", "Volcano")
+            "softdepend" to listOf("Kup", "Volcano", "CheatBreakerAPI", "Apollo-Bukkit")
         )
 
         pluginData.toYaml(writer)
@@ -124,9 +132,9 @@ tasks.named<ShadowJar>("shadowJar") {
     archiveVersion.set("${project.version}")
     minimize()
 
-    relocate("de.tr7zw.changeme.nbtapi", "dev.comunidad.net.libs.nbtapi")
-    relocate("com.cryptomorin.xseries", "dev.comunidad.net.libs.xseries")
-    relocate("fr.mrmicky.fastparticles", "dev.comunidad.net.libs.fastparticles")
+    relocate("de.tr7zw.changeme.nbtapi", "net.cyruspvp.hub.libs.nbtapi")
+    relocate("com.cryptomorin.xseries", "net.cyruspvp.hub.libs.xseries") // Relocando correctamente XSeries
+    relocate("fr.mrmicky.fastparticles", "net.cyruspvp.hub.libs.fastparticles")
     relocate("com.github.retrooper", "xyz.refinedev.lib.com.github.retrooper")
 }
 

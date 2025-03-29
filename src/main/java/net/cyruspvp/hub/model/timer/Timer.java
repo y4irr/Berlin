@@ -1,6 +1,6 @@
 package net.cyruspvp.hub.model.timer;
 
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -4,7 +4,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.InsertOneOptions;
 import net.cyruspvp.hub.user.SocialStuff;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.database.mongo.Mongo;
 import net.cyruspvp.hub.user.User;
 import net.cyruspvp.hub.user.UserManager;

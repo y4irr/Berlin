@@ -39,4 +39,9 @@ public class DefaultBan implements IBan {
         }
         return -1; // -1 means permanent ban or not banned
     }
+
+    @Override
+    public String getExecutor(UUID playerUUID) {
+        return "";
+    }
 }

@@ -1,7 +1,7 @@
 package net.cyruspvp.hub.model.hotbar.normal;
 
 import net.cyruspvp.hub.model.hotbar.normal.types.*;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.utilities.file.FileConfig;
 import net.cyruspvp.hub.utilities.item.ItemBuilder;
 import org.bukkit.Bukkit;

@@ -6,7 +6,7 @@ import com.comphenix.protocol.ProtocolManager;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.EnumWrappers;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
-import net.cyruspvp.hub.BerlinPlugin;
+import net.cyruspvp.hub.Berlin;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -71,7 +71,7 @@ public class ActionBarAPI {
                 }
                 sendActionBar(player, message);
             }
-        }.runTaskTimer(BerlinPlugin.getPlugin(), 1L, 1L);
+        }.runTaskTimer(Berlin.getPlugin(), 1L, 1L);
     }
 
     public static void sendActionBarToAllPlayers(String message) {

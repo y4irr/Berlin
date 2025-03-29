@@ -1,7 +1,6 @@
 package net.cyruspvp.hub.integrations;
 
-import net.cyruspvp.hub.BerlinPlugin;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.model.queue.Queue;
 import net.cyruspvp.hub.model.queue.QueueManager;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
@@ -30,7 +29,7 @@ public class PlaceholderAPIExpansion extends PlaceholderExpansion {
 
     @Override
     public @NotNull String getAuthor() {
-        return BerlinPlugin.getPlugin().getDescription().getAuthors().toString()
+        return Berlin.getPlugin().getDescription().getAuthors().toString()
                 .replace("[", "").replace("]", "");
     }
 
@@ -41,7 +40,7 @@ public class PlaceholderAPIExpansion extends PlaceholderExpansion {
 
     @Override
     public @NotNull String getVersion() {
-        return BerlinPlugin.getPlugin().getDescription().getVersion();
+        return Berlin.getPlugin().getDescription().getVersion();
     }
 
     @Override

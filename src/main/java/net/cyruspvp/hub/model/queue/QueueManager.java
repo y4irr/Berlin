@@ -4,7 +4,7 @@ import net.cyruspvp.hub.model.queue.player.QueuePlayer;
 import net.cyruspvp.hub.model.queue.rank.QueueRankManager;
 import net.cyruspvp.hub.utilities.BungeeUtil;
 import net.cyruspvp.hub.utilities.file.FileConfig;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import lombok.Getter;
 import org.bukkit.entity.Player;
 

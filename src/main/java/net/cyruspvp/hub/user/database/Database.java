@@ -1,6 +1,6 @@
 package net.cyruspvp.hub.user.database;
 
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.user.User;
 import net.cyruspvp.hub.user.UserManager;
 import lombok.RequiredArgsConstructor;

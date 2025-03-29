@@ -1,6 +1,6 @@
 package net.cyruspvp.hub.model.selector;
 
-import net.cyruspvp.hub.BerlinPlugin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.utilities.file.FileConfig;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,7 +31,7 @@ public class ServerSelector {
     public ServerSelector(String name) {
         this.name = name;
         this.subServerSelectors = new ArrayList<>();
-        this.subServerFile = new FileConfig(BerlinPlugin.getPlugin(), "selector/sub-server/" + name + "-server.yml");
+        this.subServerFile = new FileConfig(Berlin.getPlugin(), "selector/sub-server/" + name + "-server.yml");
     }
 
     public void loadOrCreateFolder() {

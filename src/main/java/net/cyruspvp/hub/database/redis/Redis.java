@@ -1,8 +1,7 @@
 package net.cyruspvp.hub.database.redis;
 
-import net.cyruspvp.hub.BerlinPlugin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.utilities.ChatUtil;
-import net.cyruspvp.hub.utilities.Berlin;
 import lombok.Getter;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -37,10 +36,10 @@ public class Redis {
             jedis.connect();
 
             connected = true;
-            ChatUtil.logger("&a[" + BerlinPlugin.getPlugin().getName() + "] Redis successfully connected.");
+            ChatUtil.logger("&a[" + Berlin.getPlugin().getName() + "] Redis successfully connected.");
         }
         catch (Exception exception) {
-            ChatUtil.logger("&c[" + BerlinPlugin.getPlugin().getName() + "] &cRedis failed to connect.");
+            ChatUtil.logger("&c[" + Berlin.getPlugin().getName() + "] &cRedis failed to connect.");
         }
     }
 

@@ -1,5 +1,6 @@
 package net.cyruspvp.hub.model.hotbar.normal.types;
 
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.model.hotbar.normal.NormalHotbar;
 import net.cyruspvp.hub.model.hotbar.normal.NormalHotbarManager;
 import net.cyruspvp.hub.utilities.ChatUtil;
@@ -17,15 +18,9 @@ public class InformationHotbar extends NormalHotbar {
 
     @Override
     public void onItemInteract(Player player) {
-        player.sendMessage(ChatUtil.translate(new String[]{
-                "&7&m------------------------",
-                "&d&lServer Information",
-                "",
-                "&aStore&7: &fstore.cyruspvp.net",
-                "&9Discord&7: &fdiscord.cyruspvp.net",
-                "&bTeamSpeak&7: &fts.cyruspvp.net",
-                "&7&m------------------------"
-        }));
+        for (String line : Berlin.getPlugin().getHotbarFile().getStringList("normal.information.message")) {
+            player.sendMessage(ChatUtil.translate(line));
+        }
         PlayerUtil.playSound(player, "CLICK");
         NormalHotbar InformationHotbar = normalHotbarManager.getHotbar("information");
         player.getInventory().setItem(InformationHotbar.getItemSlot(), InformationHotbar.getItem(player));

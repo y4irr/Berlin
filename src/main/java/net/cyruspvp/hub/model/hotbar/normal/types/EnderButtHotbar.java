@@ -1,6 +1,6 @@
 package net.cyruspvp.hub.model.hotbar.normal.types;
 
-import net.cyruspvp.hub.BerlinPlugin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.model.hotbar.normal.NormalHotbar;
 import net.cyruspvp.hub.utilities.PlayerUtil;
 import fr.mrmicky.fastparticles.ParticleType;
@@ -40,6 +40,6 @@ public class EnderButtHotbar extends NormalHotbar {
                 }
                 particleType.spawn(enderPearl.getWorld(), enderPearl.getLocation(), 1);
             }
-        }.runTaskTimer(BerlinPlugin.getPlugin(), 1L, 1L);
+        }.runTaskTimer(Berlin.getPlugin(), 1L, 1L);
     }
 }

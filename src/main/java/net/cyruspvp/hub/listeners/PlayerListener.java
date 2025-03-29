@@ -1,9 +1,12 @@
 package net.cyruspvp.hub.listeners;
 
+import me.zowpy.core.api.CoreAPI;
+import net.cyruspvp.hub.model.rank.RankManager;
 import net.cyruspvp.hub.utilities.ChatUtil;
 import net.cyruspvp.hub.utilities.PlayerUtil;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.utilities.cosmetics.ParticleUtils;
+import net.cyruspvp.hub.utilities.item.ItemBuilder;
 import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
@@ -13,13 +16,19 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.*;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.enchantments.Enchantment;
+
+//import static net.cyruspvp.hub.utilities.actionbar.ActionBarAPI.sendActionBar;
 
 public class PlayerListener implements Listener {
 
 	private final Berlin plugin;
+	private final RankManager rankManager;
 
 	public PlayerListener(Berlin plugin) {
 		this.plugin = plugin;
+		this.rankManager = plugin.getRankManager();
 	}
 
 	@EventHandler
@@ -27,22 +36,29 @@ public class PlayerListener implements Listener {
 		Player player = event.getPlayer();
 
 		float walkSpeed = (float) plugin.getConfigFile().getDouble("Player-Join.Speed");
-//		sendActionBar(player, ChatUtil.translate("&f&ki&4❤&f&ki&r &d&l75% OFF &favailable at &2&lstore.cyruspvp.net &f&ki&4❤&f&ki&r"));
-//		Bukkit.getScheduler().runTaskLater(this.plugin.getPlugin(), () -> {
-//			player.sendMessage(ChatUtil.translate(new String[]{
-//					"",
-//					"&2&lHappy Holidays &4&l❤",
-//					"&7We are celebrating our first Christmas together,",
-//					"&7Thank you for all of your support &4&l❤",
-//					""}));
-//		}, 20L);
-		Bukkit.getScheduler().runTaskLater(this.plugin.getPlugin(), () -> { PlayerUtil.playSound(player, "CAT_PURR");}, 20L);
+		String soundName = plugin.getConfigFile().getString("Player-Join.Sound");
+
+		Sound joinSound = null;
+		try {
+			joinSound = Sound.valueOf(soundName);
+		} catch (IllegalArgumentException | NullPointerException e) {
+			plugin.getLogger().warning("Invalid Sound! You are using " + soundName);
+		}
+
+		if (joinSound != null) {
+			Sound finalJoinSound = joinSound;
+			Bukkit.getScheduler().runTaskLater(Berlin.getPlugin(), () -> player.playSound(player.getLocation(), finalJoinSound, 1.0f, 1.0f), 20L);
+		}
+
+		player.setWalkSpeed(walkSpeed);
 		player.setHealth(20.0);
 		player.setFoodLevel(20);
-		player.setExp(0);
+		player.setExp(0.0f);
+		player.setLevel(0);
 		player.setGameMode(GameMode.ADVENTURE);
-		player.setWalkSpeed(walkSpeed);
+		giveArmor(player);
 	}
+
 
 	@EventHandler
 	private void onPlayerDropItem(PlayerDropItemEvent event) {
@@ -78,9 +94,7 @@ public class PlayerListener implements Listener {
 	private void onPlayerDoubleJump(PlayerToggleFlightEvent event) {
 		Player player = event.getPlayer();
 		if (this.plugin.getConfigFile().getBoolean("double-jump.enabled")) {
-			if (player.getGameMode() == GameMode.CREATIVE) {
-				event.setCancelled(false);
-				player.setAllowFlight(true);
+			if (player.getGameMode() == GameMode.CREATIVE || player.isFlying()) {
 				return;
 			}
 
@@ -120,6 +134,7 @@ public class PlayerListener implements Listener {
 			);
 		}
 	}
+
 	@EventHandler
 	private void onDamage(EntityDamageEvent e) {
 		e.setCancelled(true);
@@ -130,5 +145,71 @@ public class PlayerListener implements Listener {
 		event.setDeathMessage(null);
 		event.setDroppedExp(0);
 		event.getDrops().clear();
+	}
+
+	private void giveArmor(Player player) {
+		String player1 = rankManager.getRank().getName(player.getUniqueId());
+
+		ItemStack chest = new ItemBuilder(Material.LEATHER_CHESTPLATE)
+				.setName(ChatUtil.translate(rankManager.getRank().getColor(player.getUniqueId()) + rankManager.getRank().getName(player.getUniqueId()) + " &fArmor"))
+				.addEnchantment(Enchantment.DURABILITY, 1)
+				.setLeatherArmorColor(colorByRank(player, player1))
+				.build();
+
+		ItemStack legs = new ItemBuilder(Material.LEATHER_LEGGINGS)
+				.setName(ChatUtil.translate(rankManager.getRank().getColor(player.getUniqueId()) + rankManager.getRank().getName(player.getUniqueId()) + " &fArmor"))
+				.addEnchantment(Enchantment.DURABILITY, 1)
+				.setLeatherArmorColor(colorByRank(player, player1))
+				.build();
+
+		ItemStack boots = new ItemBuilder(Material.LEATHER_BOOTS)
+				.setName(ChatUtil.translate(rankManager.getRank().getColor(player.getUniqueId()) + rankManager.getRank().getName(player.getUniqueId()) + " &fArmor"))
+				.addEnchantment(Enchantment.DURABILITY, 1)
+				.setLeatherArmorColor(colorByRank(player, player1))
+				.build();
+
+		player.getInventory().setChestplate(chest);
+		player.getInventory().setLeggings(legs);
+		player.getInventory().setBoots(boots);
+		player.updateInventory();
+	}
+
+	private Color colorByRank(Player player, String player1) {
+		String color = rankManager.getRank().getColor(player.getUniqueId());
+
+		if (color.equals(ChatColor.RED.toString())) {
+			return Color.RED;
+		} else if (color.equals(ChatColor.DARK_RED.toString())) {
+			return Color.MAROON;
+		} else if (color.equals(ChatColor.BLUE.toString())) {
+			return Color.BLUE;
+		} else if (color.equals(ChatColor.DARK_BLUE.toString())) {
+			return Color.NAVY;
+		} else if (color.equals(ChatColor.GRAY.toString())) {
+			return Color.SILVER;
+		} else if (color.equals(ChatColor.DARK_GRAY.toString())) {
+			return Color.GRAY;
+		} else if (color.equals(ChatColor.WHITE.toString())) {
+			return Color.WHITE;
+		} else if (color.equals(ChatColor.YELLOW.toString())) {
+			return Color.YELLOW;
+		} else if (color.equals(ChatColor.GREEN.toString())) {
+			return Color.LIME;
+		} else if (color.equals(ChatColor.DARK_GREEN.toString())) {
+			return Color.GREEN;
+		} else if (color.equals(ChatColor.GOLD.toString())) {
+			return Color.ORANGE;
+		} else if (color.equals(ChatColor.LIGHT_PURPLE.toString())) {
+			return Color.FUCHSIA;
+		} else if (color.equals(ChatColor.DARK_PURPLE.toString())) {
+			return Color.PURPLE;
+		} else if (color.equals(ChatColor.AQUA.toString())) {
+			return Color.AQUA;
+		} else if (color.equals(ChatColor.DARK_AQUA.toString())) {
+			return Color.TEAL;
+		} else if (color.equals(ChatColor.BLACK.toString())) {
+			return Color.BLACK;
+		}
+		return Color.TEAL;
 	}
 }

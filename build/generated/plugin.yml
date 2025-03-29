@@ -1,0 +1,16 @@
+main: net.cyruspvp.hub.Berlin
+name: Berlin
+version: 28.03.2025
+authors:
+  - Astro Operations
+  - Comunidad
+  - Yair Soto
+api-version: 1.13
+depend:
+  - PlaceholderAPI
+  - ProtocolLib
+softdepend:
+  - Kup
+  - Volcano
+  - CheatBreakerAPI
+  - Apollo-Bukkit

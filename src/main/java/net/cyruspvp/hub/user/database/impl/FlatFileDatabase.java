@@ -1,8 +1,7 @@
 package net.cyruspvp.hub.user.database.impl;
 
-import net.cyruspvp.hub.BerlinPlugin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.user.SocialStuff;
-import net.cyruspvp.hub.utilities.Berlin;
 import net.cyruspvp.hub.user.User;
 import net.cyruspvp.hub.user.UserManager;
 import net.cyruspvp.hub.user.database.Database;
@@ -21,7 +20,7 @@ public class FlatFileDatabase extends Database {
     public FlatFileDatabase(Berlin plugin, UserManager userManager) {
         super(plugin, userManager);
 
-        this.fileConfig = new FileConfig(BerlinPlugin.getPlugin(), "users.yml");
+        this.fileConfig = new FileConfig(Berlin.getPlugin(), "users.yml");
         this.configuration = fileConfig.getConfiguration();
     }
 

@@ -2,7 +2,7 @@ package net.cyruspvp.hub.model.actionbar;
 
 import net.cyruspvp.hub.utilities.actionbar.ActionBarAPI;
 import net.cyruspvp.hub.utilities.ChatUtil;
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import org.bukkit.Bukkit;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package net.cyruspvp.hub.model.selector.menu.button;
 
-import net.cyruspvp.hub.utilities.Berlin;
+import net.cyruspvp.hub.Berlin;
 import net.cyruspvp.hub.model.selector.SubServerSelector;
 import net.cyruspvp.hub.utilities.BungeeUtil;
 import net.cyruspvp.hub.utilities.ChatUtil;
