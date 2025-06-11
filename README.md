@@ -1,4 +1,4 @@
-# Berlin
+# Berlin (COMET c0munidad SKID + AZURITE FEATURES SKID)
 
 Berlin HubCore (Really Cool)
 
